@@ -4,6 +4,8 @@ var bodyparser = require('body-parser');
 var fs = require('fs');
 var app = express();
 // variables
+var quizbase = JSON.parse('{"quizzes":[]}');
+var formatQuiz = '{"name":"","desc":"","target":"","questions":[]}';
 var port = 8080;
 // express settings
 app.set('view engine','ejs');
@@ -20,9 +22,21 @@ app.get('/',function(req,res){
 
 app.post('/',function(req,res){
 	var name_request = req.body;
+	console.log(name_request);
 	res.render('response',name_request);
 	
 });
+
+app.get('/create',function(req,res){
+	var tempQuiz = JSON.parse(formatQuiz);
+	tempQuiz.name = "New Quiz";
+	console.log(JSON.stringify(tempQuiz));
+	console.log(formatQuiz);
+       	res.json(tempQuiz);
+});
+
+
+
 
 app.listen(port, function(){
 	console.log("Listening on port "+port+"...");
