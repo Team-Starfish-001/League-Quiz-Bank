@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index"
+    "server": "nodemon index",
+    "create": "create-react-app client"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "create-react-app": "^2.0.4",
     "ejs": "^2.6.1",
     "express": "^4.16.3"
   },
