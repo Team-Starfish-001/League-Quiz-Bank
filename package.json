@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon index",
-    "create": "create-react-app client"
+    "create": "create-react-app client-app"
   },
   "author": "",
   "license": "ISC",

@@ -46,6 +46,14 @@ app.post('/quizzes',function(req,res){
 	res.json(quizbase);
 });
 
+app.get('/login',function(req,res){
+	res.send("get req");
+});
+app.post('/login',function(req,res){
+	var login_request = req.body;
+	console.log(login_request);
+	res.json(login_request);
+});
 
 app.listen(port, function(){
 	console.log("Listening on port "+port+"...");
