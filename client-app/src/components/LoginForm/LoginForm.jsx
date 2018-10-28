@@ -1,7 +1,7 @@
-import  React, { Component } from 'react';
+import  React from 'react';
 import axios from 'axios';
 
-class LoginForm extends Component {
+class LoginForm extends React.Component {
     constructor(props){
 	super(props);
     }
