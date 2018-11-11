@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
+import Quiz from './components/Quiz/Quiz.jsx';
 
 const data = {
   "QuizName":"SuperQuiz",
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <div className="App">
       <Dashboard/>
+      <Quiz data={data} />
       </div>
     );
   }
