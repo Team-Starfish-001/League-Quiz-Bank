@@ -4,7 +4,12 @@ import './Quiz.css';
 class Quiz extends Component {
     render() {
         return (
-            <div className="QuizCard">{this.props.data.QuizName}</div>
+            <div className="QuizCard">{this.props.data.QuizName}
+            <img src={this.props.data.QuizImg}/>
+            <p>Created by {this.props.data.Teacher}</p>
+            <p>Class {this.props.data.ClassName}</p>
+            <p>{this.props.data.QuizDate}</p>
+            </div>
         );
     }
 }

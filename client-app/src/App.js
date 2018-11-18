@@ -5,12 +5,13 @@ import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Quiz from './components/Quiz/Quiz.jsx';
 
 const data = {
-  "QuizName":"SuperQuiz",
-  "QuizDate":"Sunday, November 10",
-  "QuizImg":"img",
-  "Teacher":"Bob",
-  "ClassName":"Frogs",
-  "ClassLevel":"Level 2"
+  "QuizName": "SuperQuiz",
+  "QuizDate": "Sunday, November 10",
+  "QuizImg": logo,
+  "Teacher": "Bob",
+  "ClassName": "Frogs",
+  "ClassLevel": "Level 2",
+  "QuizId": "1"
 }
 
 class App extends Component {
