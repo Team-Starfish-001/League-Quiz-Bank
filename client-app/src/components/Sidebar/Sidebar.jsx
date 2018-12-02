@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../../bootstrap-4.1.3-dist/css/bootstrap.min.css';
 var SidebarStyle = {
     "box-sizing-property":"border-box",
     "padding":"10px",
@@ -12,7 +12,7 @@ class Sidebar extends React.Component {
         var pages = ["Blah", "Blah", "Blah", "Blah"];
 
         return (
-            <div className="sidebar" style={SidebarStyle}>
+            <div className="col-2" style={SidebarStyle}>
                 <ul>
                     <li>djfasf</li>
                     <li>djfasf</li>
