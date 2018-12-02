@@ -5,7 +5,7 @@ var headerStyle = {
     "background":"orange",
     "color":"white",
     "width":"100%",
-    "position":"absolute"
+    //"position":"absolute"
 };
 class Header extends React.Component {
 

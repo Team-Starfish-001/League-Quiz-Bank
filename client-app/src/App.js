@@ -34,8 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Dashboard/>
-      <QuizList data={data} />
+      <Dashboard data={data}/>
       </div>
     );
   }
