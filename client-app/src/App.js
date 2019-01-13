@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import QuizList from './components/QuizList/QuizList.jsx';
+import {connect} from 'react-redux';
+import {addQuiz} from './actions/quizActions';
+
 var data =[{
 	"QuizName": "SuperQuiz",
 	"QuizDate": "Sunday, November 10",
@@ -34,10 +37,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <button onClick={this.props.fireAction}>Action</button>
       <Dashboard data={data}/>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps() {
+
+}
+
+function mapDispatchToProps(dispatch) {
+  return {fireAction: function() {
+    dispatch(addQuiz())
+  }}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
