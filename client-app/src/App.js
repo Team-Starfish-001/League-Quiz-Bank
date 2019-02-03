@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import QuizList from './components/QuizList/QuizList.jsx';
+import DataList from './components/DataList/DataList'
 import {connect} from 'react-redux';
 import {addQuiz} from './actions/quizActions';
 
@@ -22,7 +23,7 @@ var data =[{
     "ClassName": "Frogs",
     "ClassLevel": "Level 2",
     "QuizId": "1"
-    },{ 
+    },{
     "QuizName":"asd",
     "QuizDate":"asdas",
     "QuizImg": logo,
@@ -39,6 +40,7 @@ class App extends Component {
       <div className="App">
       <button onClick={this.props.fireAction}>Action</button>
       <Dashboard data={data}/>
+			<DataList /> 
       </div>
     );
   }
