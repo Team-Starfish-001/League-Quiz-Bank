@@ -22,32 +22,34 @@ const styles = theme => ({
 class DataList extends React.Component {
   render() {
     return(
-      <Paper className={this.props.root}>
-        <Table className={this.props.table}>
+      <Paper className={ this.props.root }>
+        <Table className={ this.props.table }>
           <TableHead>
             <TableRow>
-              <TableCell>Head 1</TableCell>
-              <TableCell>Head 2</TableCell>
-              <TableCell>Head 3</TableCell>
+              { this.props.data.headers.map(header => (
+                <TableCell>{ header.name }</TableCell>
+              )) }
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell>Row 1</TableCell>
-              <TableCell>Row 2</TableCell>
-              <TableCell>Row 3</TableCell>
-            </TableRow>
+            { this.props.data.rows.map(row => (
+              <TableRow>
+                <TableCell>{ row.name }</TableCell>
+                <TableCell>{ row.date }</TableCell>
+                <TableCell>{ row.score }</TableCell>
+              </TableRow>
+            )) }
           </TableBody>
         </Table>
       </Paper>
     );
   }
-
-  DataList.propTypes = {
-    name: PropTypes.string;
-    rows: PropTypes.number;
-    cols: PropTypes.number;
-  };
 }
+
+DataList.propTypes = {
+  name: PropTypes.string,
+  headers: PropTypes.array,
+  rows: PropTypes.number,
+};
 
 export default withStyles(styles)(DataList);
