@@ -1,7 +1,6 @@
 import  React from 'react';
 import QuizList from '../QuizList/QuizList.jsx';
 import '../../bootstrap-4.1.3-dist/css/bootstrap.min.css';
-
 var ContentStyle = {
     "float":"right",
     "border":"1px solid black"
