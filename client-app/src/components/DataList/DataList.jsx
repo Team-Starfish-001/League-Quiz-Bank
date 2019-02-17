@@ -26,7 +26,7 @@ class DataList extends React.Component {
         <Table className={ this.props.table }>
           <TableHead>
             <TableRow>
-              { this.props.data.headers.map(header => (
+              // STOPPED HERE: TRYING TO EXCLUDE LAST COLUMN FOR ACTION: { this.props.data.headers.filter(header => (header.index < headers.length - 1)).map(header => (
                 <TableCell>{ header.name }</TableCell>
               )) }
             </TableRow>
@@ -47,9 +47,7 @@ class DataList extends React.Component {
 }
 
 DataList.propTypes = {
-  name: PropTypes.string,
-  headers: PropTypes.array,
-  rows: PropTypes.number,
+  data: PropTypes.array,
 };
 
 export default withStyles(styles)(DataList);
