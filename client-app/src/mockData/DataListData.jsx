@@ -1,33 +1,34 @@
 export const dummyData = {
   "headers": [
-    {
-      "name": "Quiz Name"
-    },
-    {
-      "name": "Date"
-    },
-    {
-      "name": "Score"
-    },
-    {
-      "name": "Score"
-    }
+    "Quiz Name",
+    "Author",
+    "Create Date",
+    "Action"
   ],
   "rows": [
-    {
-      "name": "Quiz 1",
-      "date": "10/25/18",
-      "score": "95%",
-    },
-    {
-      "name": "Quiz 2",
-      "date": "10/32/18",
-      "score": "100%",
-    },
-    {
-      "name": "Quiz 3",
-      "date": "11/7/18",
-      "score": "60%",
-    }
+    [
+      "Quiz 1",
+      "John Smith",
+      "10/25/18",
+      "ACTION"
+    ],
+    [
+      "Quiz 2",
+      "John Smith",
+      "10/32/18",
+      "ACTION"
+    ],
+    [
+      "Quiz 3",
+      "John Smith",
+      "11/7/18",
+      "ACTION"
+    ],
+    [
+      "Quiz 4",
+      "John Smith",
+      "11/7/18",
+      "ACTION"
+    ]
   ]
 }
