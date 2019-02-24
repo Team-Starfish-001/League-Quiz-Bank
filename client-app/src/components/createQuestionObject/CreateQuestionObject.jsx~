@@ -5,12 +5,12 @@ class CreateQuestionObject extends Component {
 	return(
 		<div>
 			<form id="1">
-		      	      <input type="text" name="Question"/>
-			      <select name="questionType">
+		      	      Question: <input type="text" name="Question"/><br/>
+			      Question Type: <select name="questionType">
 				<option value="single" selected>Single Choice Answer</option>
 				<option value="multiple">Multiple Choice Answer</option>
 				<option value="fill">Fill in Answer</option>
-			      </select>
+			      </select><br/>
 			      
 			</form>
 			</div>
