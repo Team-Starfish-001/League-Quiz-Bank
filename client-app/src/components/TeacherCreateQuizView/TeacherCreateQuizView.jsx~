@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 
 class TeacherCreateQuizView extends Component {
       render(){
-	return();
+	return(
+		<div>
+			<form id="0">
+				Title: <input type="text" name="Title"/><br/>
+				Desc: <input type="text" name="Desc"/><br/>
+				Tags: <input type="text" name="Tags"/><br/>
+			</form>
+		</div>
+	);
       }
 }
 
-export default TeacherQuizView;
+export default TeacherCreateQuizView;
