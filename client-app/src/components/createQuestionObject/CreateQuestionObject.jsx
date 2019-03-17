@@ -35,6 +35,7 @@ class CreateQuestionObject extends Component {
       render(){
 		return(
 			<div>
+				<h4>{this.props.index}.</h4>
 				<form id={this.props.index}>
 					Question: <input type="text" name="Question"/><br/>
 					Question Type: <select name="questionType" value={this.state.selectValue} 
@@ -45,6 +46,7 @@ class CreateQuestionObject extends Component {
 					</select><br/>
 					{this.getAnswerPrompt()}
 				</form>
+				<br/>
 				</div>
 			);
       }

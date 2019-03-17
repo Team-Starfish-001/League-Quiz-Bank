@@ -4,31 +4,35 @@ import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
 class TeacherCreateQuizView extends Component {
 	constructor(props){
 		super(props);
-		this.displayData = [];
-
-    
-	}  
-	appendData =(e)=> {
-		this.displayData.push(<div>hi</div>);
-		/*this.setState({
-			showdata : this.displayData,
-			index: this.state.index +1
-		});*/
-		
+		this.state = {
+			   selectValue: "10"
+		};
 	}
+
+  	onChange=(e)=>{
+		this.setState({
+			selectValue:e.target.value
+		});
+	}
+
 	submitForms =()=>{
 
-    }
+	}
     render(){
 		return(
 			<div>
-				<form id="0">
+				Amount of Questions: <select name="questionAmt" value={this.state.selectValue}
+                                        onChange={this.onChange}>
+                                        <option value="10" >10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        </select>
+				<form id="data">
 					Title: <input type="text" name="Title"/><br/>
 					Desc: <input type="text" name="Desc"/><br/>
 					Tags: <input type="text" name="Tags"/><br/>
 				</form><br/>
-				{this.displayData.map((e)=>{e})}
-				<input type="submit" className="button" value="Add" onClick={e=>this.appendData()}/>
+				{Array.from(Array(parseInt(this.state.selectValue)).keys()).map(e=><CreateQuestionObject index={e+1} />)}
 				<input type="submit" className="button" value="Submit" onClick={this.submitForms()}/>
 			</div>
 			
