@@ -7,8 +7,7 @@ cache:
 script:
   - npm install --prefix client-app
   - npm test --prefix client-app
-  - npm run ghp-clean --prefix client-ap
-  - npm run deploy --prefix client-app
+  - npm run build --prefix client-app
 verbose: true
 deploy:
   provider: pages
