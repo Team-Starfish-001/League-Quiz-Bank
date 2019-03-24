@@ -7,7 +7,7 @@ cache:
 script:
   - npm install --prefix client-app
   - npm test --prefix client-app
-  - npm run gh-pages-clean --prefix client-app
+  - npm run ghp-clean --prefix client-app
 verbose: true
 before_deploy: git config --global user.email travis@travis-ci.org && git config --global user.name "Travis CI"
 deploy:
