@@ -5,6 +5,7 @@ cache:
   directories:
     - client-app/node_modules
 script:
+  - npm install --prefix client-app
   - npm test --prefix client-app
   - npm run build --prefix client-app
 verbose: true
