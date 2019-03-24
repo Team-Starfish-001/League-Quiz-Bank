@@ -1,4 +1,4 @@
-export const dummyData = {
+{
   "headers": [
     "Quiz Name",
     "Author",
