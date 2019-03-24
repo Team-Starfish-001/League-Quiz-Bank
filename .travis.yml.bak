@@ -7,15 +7,17 @@ cache:
 script:
   - npm install --prefix client-app
   - npm test --prefix client-app
-  - npm run ghp-clean --prefix client-ap
-  - npm run deploy --prefix client-app
+  - npm run ghp-clean --prefix client-app
 verbose: true
+before_deploy: git config --global user.email travis@travis-ci.org && git config --global user.name "Travis CI"
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
   keep-history: true
   local-dir: client-app/build
+  provider: script
+  script: npm run deploy --prefix client-app
   on:
     branch: master
 branches:
