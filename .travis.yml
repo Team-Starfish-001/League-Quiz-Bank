@@ -17,3 +17,6 @@ deploy:
   local-dir: client-app/build
   on:
     branch: master
+branches:
+  only:
+    - master
