@@ -45,15 +45,15 @@ class DataList extends React.Component {
           <TableHead>
             <TableRow>
               { this.props.data.headers.map(header => (
-                <TableCell>{ header }</TableCell>
+                <TableCell key={ header }>{ header }</TableCell>
               )) }
             </TableRow>
           </TableHead>
           <TableBody>
             { this.props.data.rows.map(row => (
-              <TableRow>
+              <TableRow key={ row }>
                 { row.slice(0, row.length - 1).map(category => (
-                  <TableCell>{ category }</TableCell>
+                  <TableCell key={ category }>{ category }</TableCell>
                 )) }
                 <TableCell>
                   <Button variant="contained" onClick={this.handleClick}>Default</Button>
@@ -73,7 +73,7 @@ class DataList extends React.Component {
 }
 
 DataList.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(DataList);
