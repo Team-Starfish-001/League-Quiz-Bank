@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header.jsx';
+import UserProfilePic from '../UserProfilePic/UserProfilePic.jsx';
 // import Content from '../Content/Content.jsx';
 import Sidebar from '../Sidebar/Sidebar.jsx';
 
@@ -10,7 +11,7 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard" style={DashboardStyle}>
         <Header />
-        <Sidebar />
+        <UserProfilePic ></UserProfilePic>
         {/* <Content data={this.props.data}/> */}
       </div>
     );
