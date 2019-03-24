@@ -13,8 +13,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -23,20 +21,18 @@ import Menu from '@material-ui/core/Menu';
 
 const styles = {
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   grow: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20,
-  }, list: {
-    width: 250,
+    marginRight: 20
   },
-  fullList: {
-    width: 'auto',
-  },
+  list: {
+    width: 250
+  }
 };
 
 class Header extends React.Component {
@@ -46,16 +42,15 @@ class Header extends React.Component {
     top: false,
     left: false,
     bottom: false,
-    right: false,
-
+    right: false
   };
 
   toggleDrawer = (side, open) => () => {
     this.setState({
-      [side]: open,
+      [side]: open
     });
   };
-  
+
   handleChange = event => {
     this.setState({ auth: event.target.checked });
   };
@@ -74,7 +69,9 @@ class Header extends React.Component {
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
@@ -83,34 +80,40 @@ class Header extends React.Component {
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
       </div>
     );
-    const fullList = (
-      <div className='fullList'>
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </div>
-    );
+    // const fullList = (
+    //   <div className='fullList'>
+    //     <List>
+    //       {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+    //         <ListItem button key={text}>
+    //           <ListItemIcon>
+    //             {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+    //           </ListItemIcon>
+    //           <ListItemText primary={text} />
+    //         </ListItem>
+    //       ))}
+    //     </List>
+    //     <Divider />
+    //     <List>
+    //       {['All mail', 'Trash', 'Spam'].map((text, index) => (
+    //         <ListItem button key={text}>
+    //           <ListItemIcon>
+    //             {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+    //           </ListItemIcon>
+    //           <ListItemText primary={text} />
+    //         </ListItem>
+    //       ))}
+    //     </List>
+    //   </div>
+    // );
 
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;
@@ -119,39 +122,39 @@ class Header extends React.Component {
     return (
       <div className={classes.root}>
         <FormGroup />
-        <AppBar position="static">
+        <AppBar position='static'>
           <Toolbar>
             <IconButton
               className={classes.menuButton}
-              onClick = {this.toggleDrawer('left',true)}
-              color="inherit"
-              aria-label="Menu"
+              onClick={this.toggleDrawer('left', true)}
+              color='inherit'
+              aria-label='Menu'
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
+            <Typography variant='h6' color='inherit' className={classes.grow}>
               League Quiz App
             </Typography>
             {auth && (
               <div>
                 <IconButton
                   aria-owns={open ? 'menu-appbar' : undefined}
-                  aria-haspopup="true"
+                  aria-haspopup='true'
                   onClick={this.handleMenu}
-                  color="inherit"
+                  color='inherit'
                 >
                   <AccountCircle />
                 </IconButton>
                 <Menu
-                  id="menu-appbar"
+                  id='menu-appbar'
                   anchorEl={anchorEl}
                   anchorOrigin={{
                     vertical: 'top',
-                    horizontal: 'right',
+                    horizontal: 'right'
                   }}
                   transformOrigin={{
                     vertical: 'top',
-                    horizontal: 'right',
+                    horizontal: 'right'
                   }}
                   open={open}
                   onClose={this.handleClose}
@@ -163,10 +166,13 @@ class Header extends React.Component {
             )}
           </Toolbar>
         </AppBar>
-        <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+        <Drawer
+          open={this.state.left}
+          onClose={this.toggleDrawer('left', false)}
+        >
           <div
             tabIndex={0}
-            role="button"
+            role='button'
             onClick={this.toggleDrawer('left', false)}
             onKeyDown={this.toggleDrawer('left', false)}
           >
@@ -179,7 +185,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Header);

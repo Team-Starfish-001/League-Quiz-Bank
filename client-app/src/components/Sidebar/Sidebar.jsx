@@ -1,18 +1,16 @@
 import React from 'react';
 
 var SidebarStyle = {
-  'box-sizing-property': 'border-box',
+  boxSizingProperty: 'border-box',
   padding: '10px',
   width: '80px',
-  float: 'left',
+  float: 'left'
 };
 
 class Sidebar extends React.Component {
   render() {
-    var pages = ['Blah', 'Blah', 'Blah', 'Blah'];
-
     return (
-      <div className="col-2" style={SidebarStyle}>
+      <div className='col-2' style={SidebarStyle}>
         <ul>
           <li>djfasf</li>
           <li>djfasf</li>
