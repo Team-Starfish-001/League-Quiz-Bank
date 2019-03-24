@@ -8,7 +8,7 @@ script:
   - npm install --prefix client-app
   - npm test --prefix client-app
 verbose: true
-before_deploy: git config --global user.email publish@travis.github && git config --global user.name "Travis"
+before_deploy: git config --global user.email travis@travis-ci.org && git config --global user.name "Travis CI"
 deploy:
   provider: pages
   skip-cleanup: true
