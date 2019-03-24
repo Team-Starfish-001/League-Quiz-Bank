@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header.jsx';
-import UserProfilePic from '../UserProfilePic/UserProfilePic.jsx';
-// import Content from '../Content/Content.jsx';
-import Sidebar from '../Sidebar/Sidebar.jsx';
+import Welcome from '../Welcome/Welcome';
 
 var DashboardStyle = {};
 
@@ -11,7 +9,7 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard" style={DashboardStyle}>
         <Header />
-        <UserProfilePic ></UserProfilePic>
+        <Welcome name='Ian'></Welcome>
         {/* <Content data={this.props.data}/> */}
       </div>
     );

@@ -11,7 +11,7 @@ class UserProfilePic extends React.Component {
     render() {
         return(
             <div id='profilepic'>
-                <img src={this.checkForProfilePic(this.props.src)}></img>
+                <img alt='Profile Pic' src={this.checkForProfilePic(this.props.src)}></img>
             </div>
         );
     }
