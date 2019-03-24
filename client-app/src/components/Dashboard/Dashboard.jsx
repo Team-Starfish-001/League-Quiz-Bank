@@ -12,8 +12,13 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard" style={DashboardStyle}>
         <Header />
-        <Welcome name='Ian'></Welcome>
-        <DataList data={dataListData} />
+        <div style={ {padding:'50px'} }>
+          <Welcome name='Ian'></Welcome>
+          <h1>Quiz List</h1>
+          <DataList data={dataListData} />
+          <h1>Class List</h1>
+          <DataList data={dataListData} />
+        </div>
       </div>
     );
   }
