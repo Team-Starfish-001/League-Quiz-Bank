@@ -3,14 +3,16 @@ node_js:
   - 'stable'
 cache:
   directories:
-    - node_modules
+    - client-app/node_modules
 script:
-  - npm test
-  - npm run build
+  - npm test --prefix client-app
+  - npm run build --prefix client-app
+verbose: true
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
   keep-history: true
+  local-dir: client-app/build
   on:
     branch: master
