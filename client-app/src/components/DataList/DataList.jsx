@@ -44,27 +44,27 @@ class DataList extends React.Component {
         <Table className={ this.props.table }>
           <TableHead>
             <TableRow>
-              { this.props.data.headers.map(header => (
+              { this.props.headers.map(header => (
                 <TableCell key={ header }>{ header }</TableCell>
               )) }
             </TableRow>
           </TableHead>
           <TableBody>
-            { this.props.data.rows.map(row => (
+            { this.props.rows.map(row => (
               <TableRow key={ row }>
-                { row.slice(0, row.length - 1).map(category => (
+                { row.map(category => (
                   <TableCell key={ category }>{ category }</TableCell>
-                )) }
+                ))}
                 <TableCell>
                   <Button variant="contained" onClick={this.handleClick}>Default</Button>
                   <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-                    <MenuItem onClick={this.handleClose}>Edit</MenuItem>
-                    <MenuItem onClick={this.handleClose}>Assign</MenuItem>
-                    <MenuItem onClick={this.handleClose}>Delete</MenuItem>
+                    { this.props.actions.map(action => (
+                      <MenuItem onClick={this.handleClose}>{ action }</MenuItem>
+                    ))}
                   </Menu>
                 </TableCell>
               </TableRow>
-            )) }
+            ))}
           </TableBody>
         </Table>
       </Paper>
@@ -73,7 +73,9 @@ class DataList extends React.Component {
 }
 
 DataList.propTypes = {
-  data: PropTypes.object.isRequired,
+  headers: PropTypes.array.isRequired,
+  rows: PropTypes.array.isRequired,
+  actions: PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(DataList);
