@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Quiz.css';
-import '../../bootstrap-4.1.3-dist/css/bootstrap.min.css';
 class Quiz extends Component {
     render() {
         return (
