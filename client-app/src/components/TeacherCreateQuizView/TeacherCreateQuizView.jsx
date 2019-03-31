@@ -5,13 +5,13 @@ class TeacherCreateQuizView extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			   selectValue: "10"
+			   questionAmtSelectedValue: "10"
 		};
 	}
 
   	onChange=(e)=>{
 		this.setState({
-			selectValue:e.target.value
+			questionAmtSelectedValue:e.target.value
 		});
 	}
 
@@ -21,7 +21,7 @@ class TeacherCreateQuizView extends Component {
     render(){
 		return(
 			<div>
-				Amount of Questions: <select name="questionAmt" value={this.state.selectValue}
+				Amount of Questions: <select name="questionAmt" value={this.state.questionAmtSelectedValue}
                                         onChange={this.onChange}>
                                         <option value="10" >10</option>
                                         <option value="20">20</option>
@@ -32,7 +32,7 @@ class TeacherCreateQuizView extends Component {
 					Desc: <input type="text" name="Desc"/><br/>
 					Tags: <input type="text" name="Tags"/><br/>
 				</form><br/>
-				{Array.from(Array(parseInt(this.state.selectValue)).keys()).map(e=><CreateQuestionObject index={e+1} />)}
+				{Array.from(Array(parseInt(this.state.questionAmtSelectedValue)).keys()).map(e=><CreateQuestionObject index={e+1} />)}
 				<input type="submit" className="button" value="Submit" onClick={this.submitForms()}/>
 			</div>
 			
