@@ -14,7 +14,6 @@ class CreateQuestionObject extends Component {
 			return(
 				<div>Answer: <input type="text" name="answer-fill"/><br/></div>
 				);
-			break;
 			case "single":
 			return(<div>
 				Answer: <input type="text" name="answer-single"/><br/>
@@ -22,7 +21,6 @@ class CreateQuestionObject extends Component {
 				Option 2: <input type="text" name="option-single-2"/><br/>
 				Option 3: <input type="text" name="option-single-3"/><br/>
 				</div>);
-			break;
 			case "multiple":
 			return(<div>
 				Answer 1: <input type="text" name="answer-multiple-1"/><br/>
@@ -30,6 +28,8 @@ class CreateQuestionObject extends Component {
 				Option 1: <input type="text" name="option-multiple-1"/><br/>
 				Option 2: <input type="text" name="option-multiple-2"/><br/>
 				</div>);
+			default:
+				return(null);
 	}
       }
       render(){
