@@ -4,7 +4,7 @@ class CreateQuestionObject extends Component {
       constructor(props){
 		super(props);
 		this.state = {
-			id: this.props.index,
+			id: this.props.index -1,
 			questionType:"single",
 			question:"",
 			answerOne:"",
@@ -19,8 +19,8 @@ class CreateQuestionObject extends Component {
 	  }
       onChangeType =(e)=>{
 		  this.setState({
-			  questionType:e.target.value,
-			  answerOne:"",
+		        questionType:e.target.value,
+			answerOne:"",
 			answerTwo:"",
 			optionOne:"",
 			optionTwo:"",
@@ -78,7 +78,7 @@ class CreateQuestionObject extends Component {
 					Question: <input type="text" name="Question" onChange={this.onChangequestion}/><br/>
 					Question Type: <select name="questionType" value={this.state.questionType} 
 					onChange={this.onChangeType}>
-					<option value="single" selected>Single Choice Answer</option>
+					<option value="single" >Single Choice Answer</option>
 					<option value="multiple">Multiple Choice Answer</option>
 					<option value="fill">Fill in Answer</option>
 					</select><br/>
