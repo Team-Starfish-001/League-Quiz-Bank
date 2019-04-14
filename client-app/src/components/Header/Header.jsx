@@ -18,6 +18,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import { Link } from 'react-router-dom';
 
 const styles = {
   root: {
@@ -159,8 +160,9 @@ class Header extends React.Component {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                  <MenuItem>Profile</MenuItem>
+                  <MenuItem>My account</MenuItem>
+                  <Link to="/login" style={ {textDecoration: 'none'} }><MenuItem>Sign out</MenuItem></Link>
                 </Menu>
               </div>
             )}

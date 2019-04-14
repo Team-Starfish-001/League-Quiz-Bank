@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router';
+import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import StudentQuizView from './components/StudentTakeAQuizView/StudentQuizView';
 import Dashboard from './components/Dashboard/Dashboard';
