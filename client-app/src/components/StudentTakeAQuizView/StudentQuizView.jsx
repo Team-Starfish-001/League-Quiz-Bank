@@ -57,6 +57,7 @@ var data = [
   }
 ];
 class StudentQuizView extends React.Component {
+
   render() {
     return (
       <div>
