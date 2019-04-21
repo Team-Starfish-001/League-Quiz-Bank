@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import './LoginView.css';
+import { Link } from 'react-router-dom';
 
 class LoginView extends React.Component {
 	render() {
@@ -22,8 +23,8 @@ class LoginView extends React.Component {
 								<label>
 									Password: <input type="text" id="password" name="pass" value="" /><br />
 								</label>
-								<input type="submit" class="select_button" id="student_button" value="Student" />
-								<input type="submit" class="select_button" id="teacher_button" value="Teacher" formaction="/Teacher.html" />
+								<Link to="/" style={ {textDecoration: 'none'} }><input type="submit" class="select_button" id="student_button" value="Student" /></Link>
+								<Link to="/" style={ {textDecoration: 'none'} }><input type="submit" class="select_button" id="teacher_button" value="Teacher" formaction="/Teacher.html" /></Link>
 							</form>
 						</div>
 			     </div>
