@@ -1,5 +1,4 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
 import './LoginView.css';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +12,7 @@ class LoginView extends React.Component {
 			    </div>
 			    <div id='wrapper'>
 						<div id='league_picture_container'>
-			      	<img id='league_picture' src='https://raw.githubusercontent.com/camman00/League-Quiz-Bank-Client/master/LeagueQuizBank_HTML/LeagueLogoFFINAL2.jpg'/>
+			      	<img id='league_picture' alt='our wonderful logo' src='https://raw.githubusercontent.com/camman00/League-Quiz-Bank-Client/master/LeagueQuizBank_HTML/LeagueLogoFFINAL2.jpg'/>
 			      </div>
 			      <div id="content" >
 							<form onSubmit={this.handleSubmit} id="f1" method="post">
@@ -30,13 +29,13 @@ class LoginView extends React.Component {
 			     </div>
 			     <div class='footer'>
 			        <a id='panel_left' href='http://www.jointheleague.org/'>
-			        	<img id='league_bolt' src='https://raw.githubusercontent.com/camman00/League-Quiz-Bank-Client/master/LeagueQuizBank_HTML/bolt.png' />
+			        	<img id='league_bolt' alt='another logo' src='https://raw.githubusercontent.com/camman00/League-Quiz-Bank-Client/master/LeagueQuizBank_HTML/bolt.png' />
 			        </a>
 			        <div id='center'>
 			          <p id='footer_text'>The League Quiz Bank was created by Team Starfish. Check out their GitHub by clicking the right side icon! </p>
 			        </div>
 			        <a id='panel_right' href='https://github.com/Team-Starfish-001'>
-			          <img id='github' src="https://raw.githubusercontent.com/camman00/League-Quiz-Bank-Client/master/LeagueQuizBank_HTML/transparentgithub.png" />
+			          <img id='github' alt='github logo' src="https://raw.githubusercontent.com/camman00/League-Quiz-Bank-Client/master/LeagueQuizBank_HTML/transparentgithub.png" />
 			        </a>
 			      </div>
 			   	</div>
