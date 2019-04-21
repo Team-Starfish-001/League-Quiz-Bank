@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import StudentQuizView from './components/StudentTakeAQuizView/StudentQuizView';
+import TeacherCreateQuizView from './components/TeacherCreateQuizView/TeacherCreateQuizView'
 import Dashboard from './components/Dashboard/Dashboard';
 import LoginView from './components/LoginView/LoginView';
 
@@ -12,7 +13,8 @@ function AppRouter() {
         <Switch>
           <Route path="/login" exact component={LoginView} />
           <Route path="/" exact component={Dashboard} />
-          <Route path="/quiz" exact component={StudentQuizView} />
+          <Route path="/takeQuiz" exact component={StudentQuizView} />
+	        <Route path="/makeQuiz" exact component={TeacherCreateQuizView} />
         </Switch>
       </Router>
     </div>
