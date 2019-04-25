@@ -10,10 +10,10 @@
     "gh-pages": "^2.0.1",
     "history": "^4.7.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.8.6",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
-    "react-scripts": "2.0.5",
+    "react-scripts": "3.0.0",
     "redux": "^4.0.1"
   },
   "scripts": {
@@ -22,7 +22,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "ghp-clean": "gh-pages-clean",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
