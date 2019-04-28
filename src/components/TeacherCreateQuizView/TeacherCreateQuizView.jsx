@@ -1,8 +1,30 @@
 import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
+
+const styles = {
+  card: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+};
 
 class TeacherCreateQuizView extends Component {
 	constructor(props){
+		const { classes } = props;
+
 		super(props);
 		var list = []
                 for(var i = 1; i < 11; i++){
@@ -86,18 +108,24 @@ class TeacherCreateQuizView extends Component {
     render(){
 		return(
 			<div>
+				<h1>Create Quiz</h1>
 				Amount of Questions: <input type="text" name="question_amt" onChange={this.onChange} /><br/>
 				<form id="data">
 					Title: <input type="text" name="Title"/><br/>
 					Desc: <input type="text" name="Desc"/><br/>
 					Tags: <input type="text" name="Tags"/><br/>
 				</form><br/>
-				{Array.from(Array(this.state.questionAmtSelectedValue).keys()).map((e)=><CreateQuestionObject index={e+1} handleQuestion={this.handleQuestion} />)}
+				<Card className={classes.card}>
+					<CardContent>
+						{Array.from(Array(this.state.questionAmtSelectedValue).keys()).map((e)=><CreateQuestionObject index={e+1} handleQuestion={this.handleQuestion} />)}
+					</CardContent>
+				</Card>
 				<input type="submit" className="button" value="Submit" onClick={this.submitForms()}/>
+
 			</div>
-			
+
 	);
       }
 }
 
-export default TeacherCreateQuizView;
+export default withStyles(styles)(TeacherCreateQuizView);
