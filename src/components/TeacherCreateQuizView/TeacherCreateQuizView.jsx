@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
@@ -22,9 +23,34 @@ const styles = theme => ({
     width: 200,
   },
 });
+=======
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
+
+const styles = {
+  card: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+};
+>>>>>>> 3ff427bd3251a16a30847e89d3b392d06ed6791b
 
 class TeacherCreateQuizView extends Component {
 	constructor(props){
+		const { classes } = props;
+
 		super(props);
 		var list = []
                 for(var i = 1; i < 11; i++){
@@ -110,7 +136,10 @@ class TeacherCreateQuizView extends Component {
 		return(
 			<div>
 				<h1>Create Quiz</h1>
+<<<<<<< HEAD
 				<br/>
+=======
+>>>>>>> 3ff427bd3251a16a30847e89d3b392d06ed6791b
 				Amount of Questions: <input type="text" name="question_amt" onChange={this.onChange} /><br/>
 				<form id="data">
 					<TextField
@@ -135,16 +164,24 @@ class TeacherCreateQuizView extends Component {
                                                 variant="outlined"
                                                 />
 				</form><br/>
-				{Array.from(Array(this.state.questionAmtSelectedValue).keys()).map((e)=><CreateQuestionObject index={e+1} handleQuestion={this.handleQuestion} />)}
+				<Card className={classes.card}>
+					<CardContent>
+						{Array.from(Array(this.state.questionAmtSelectedValue).keys()).map((e)=><CreateQuestionObject index={e+1} handleQuestion={this.handleQuestion} />)}
+					</CardContent>
+				</Card>
 				<input type="submit" className="button" value="Submit" onClick={this.submitForms()}/>
+
 			</div>
-			
+
 	);
       }
 }
 
+<<<<<<< HEAD
 TeacherCreateQuizView.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
+=======
+>>>>>>> 3ff427bd3251a16a30847e89d3b392d06ed6791b
 export default withStyles(styles)(TeacherCreateQuizView);
