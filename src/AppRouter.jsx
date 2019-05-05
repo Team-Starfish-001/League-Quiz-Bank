@@ -10,8 +10,8 @@ const basename = process.env.REACT_APP_BASENAME;
 function AppRouter() {
   return (
     <div>
-      <Header />
       <Router basename={basename}>
+        <Header />
         <Route path='/' exact component={Dashboard} />
         <Route path='/takeQuiz' exact component={StudentQuizView} />
         <Route path='/makeQuiz' exact component={TeacherCreateQuizView} />

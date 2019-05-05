@@ -59,8 +59,8 @@ class DataList extends React.Component {
                 <TableCell>
                   <IconButton variant="contained" onClick={this.handleClick}><MoreVert /></IconButton>
                   <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-                    { this.props.actions.map(action => (
-                      <MenuItem onClick={this.handleClose}>{ action }</MenuItem>
+                    { this.props.actions.map((action, i) => (
+                      <MenuItem onClick={this.handleClose} key={`${action}-${i}`}>{ action }</MenuItem>
                     ))}
                   </Menu>
                 </TableCell>
