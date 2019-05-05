@@ -1,5 +1,27 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { withStyles } from '@material-ui/core/styles';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+  dense: {
+    marginTop: 16,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 class TeacherCreateQuizView extends Component {
 	constructor(props){
@@ -80,17 +102,38 @@ class TeacherCreateQuizView extends Component {
 	}
 
 	submitForms =()=>{
-
+		    console.log(this.state)
 	}
 
     render(){
+	const { classes } = this.props;
 		return(
 			<div>
+				<h1>Create Quiz</h1>
+				<br/>
 				Amount of Questions: <input type="text" name="question_amt" onChange={this.onChange} /><br/>
 				<form id="data">
-					Title: <input type="text" name="Title"/><br/>
-					Desc: <input type="text" name="Desc"/><br/>
-					Tags: <input type="text" name="Tags"/><br/>
+					<TextField
+						id="outlined-name"
+						label="Title"				
+						className={classes.textField}
+          					margin="normal"
+          					variant="outlined"
+        					/>
+					<TextField
+                                                id="outlined-name"
+                                                label="Description"
+                                                className={classes.textField}
+                                                margin="normal"
+                                                variant="outlined"
+                                                />
+					<TextField
+                                                id="outlined-name"
+                                                label="Class"
+                                                className={classes.textField}
+                                                margin="normal"
+                                                variant="outlined"
+                                                />
 				</form><br/>
 				{Array.from(Array(this.state.questionAmtSelectedValue).keys()).map((e)=><CreateQuestionObject index={e+1} handleQuestion={this.handleQuestion} />)}
 				<input type="submit" className="button" value="Submit" onClick={this.submitForms()}/>
@@ -100,4 +143,8 @@ class TeacherCreateQuizView extends Component {
       }
 }
 
-export default TeacherCreateQuizView;
+TeacherCreateQuizView.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(TeacherCreateQuizView);
