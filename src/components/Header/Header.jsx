@@ -68,18 +68,18 @@ class Header extends React.Component {
     const sideList = (
       <div className='sideList'>
         <List>
-          <Link to="/" style={ {textDecoration: 'none'} }><ListItem>
+          <ListItem button component={Link} to='/'>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
-          </ListItem></Link>
-          <Link to="/makeQuiz" style={ {textDecoration: 'none'} }><ListItem>
+          </ListItem>
+          <ListItem button component={Link} to='/makeQuiz'>
             <ListItemIcon>
               <CreateIcon />
             </ListItemIcon>
             <ListItemText primary="Create Quiz" />
-          </ListItem></Link>
+          </ListItem>
           <ListItem>
             <ListItemIcon>
               <AssignmentIcon />

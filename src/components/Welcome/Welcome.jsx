@@ -4,7 +4,7 @@ import UserProfilePic from '../UserProfilePic/UserProfilePic.jsx';
 class Welcome extends React.Component {
   render() {
     return (
-        <div class='welcome'>
+        <div className='welcome'>
             <UserProfilePic></UserProfilePic>
             <p>Welcome {this.props.name}</p>
         </div>
