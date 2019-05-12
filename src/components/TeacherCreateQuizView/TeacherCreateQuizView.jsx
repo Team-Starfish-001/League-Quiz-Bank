@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -26,8 +24,6 @@ const styles = theme => ({
 });
 class TeacherCreateQuizView extends Component {
 	constructor(props){
-		const { classes } = props;
-
 		super(props);
 		var list = []
                 for(var i = 1; i < 11; i++){
