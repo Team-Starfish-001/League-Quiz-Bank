@@ -27,37 +27,44 @@ class TeacherCreateQuizView extends Component {
                 };
 		console.log(this.state)
 	}
-
-  	onChange=(e)=>{
-		var amt = (parseInt(e.target.value)) ? parseInt(e.target.value) : 10;
+	handleQuestionAmt=(amt)=>{
 		var old_amt = this.state.form_data.amt
-		if(amt > 100 || amt < 1){
-			amt = 10
-		}
-		var questions= [];
-		var old_list = this.state.form_data.questions
-		for(var i = 1; i < amt +1; i++){
-			if(i-1 < old_amt){
-			     questions.push(old_list[i-1])
-			}else{
-				questions.push({id: i,
-                        			questionType:"single",
-                       		 		question:"",
-                        	  		answerOne:"",
-						answerTwo:"",
-                      		   		optionOne:"",
-                        	   		optionTwo:"",
-                        	   		optionThree:""})
-			}
-		}
-		this.setState({
-			questionAmtSelectedValue: amt,
-			form_data: {
-				amt: amt,
-				questions: questions
-			}
-		});
+                if(amt > 100){
+                       amt=100;
+                } else if(amt < 2){
+                        amt = 1;
+                }
+
+                var questions= [];
+                var old_list = this.state.form_data.questions
+                for(var i = 1; i < amt +1; i++){
+                        if(i-1 < old_amt){
+                             questions.push(old_list[i-1])
+                        }else{
+                                questions.push({id: i,
+                                                questionType:"single",
+                                                question:"",
+                                                answerOne:"",
+                                                answerTwo:"",
+                                                optionOne:"",
+                                                optionTwo:"",
+                                                optionThree:""})
+                        }
+                }
+                this.setState({
+                        questionAmtSelectedValue: amt,
+                        form_data: {
+                                amt: amt,
+                                questions: questions
+                        }
+                });
 	}
+  	addQuestion=(e)=>{
+		this.handleQuestionAmt(this.state.form_data.amt +1);
+	}
+	delQuestion=(e)=>{
+                this.handleQuestionAmt(this.state.form_data.amt -1);
+        }
 
 	handleQuestion=(_state)=>{
 		var index = _state.id
@@ -86,14 +93,15 @@ class TeacherCreateQuizView extends Component {
     render(){
 		return(
 			<div>
-				Amount of Questions: <input type="text" name="question_amt" onChange={this.onChange} /><br/>
 				<form id="data">
 					Title: <input type="text" name="Title"/><br/>
 					Desc: <input type="text" name="Desc"/><br/>
 					Tags: <input type="text" name="Tags"/><br/>
 				</form><br/>
 				{Array.from(Array(this.state.questionAmtSelectedValue).keys()).map((e)=><CreateQuestionObject index={e+1} handleQuestion={this.handleQuestion} />)}
-				<input type="submit" className="button" value="Submit" onClick={this.submitForms()}/>
+				<input type="submit" className="button" value="   +   " onClick={this.addQuestion}/>
+				<input type="submit" className="button" value="   -   " onClick={this.delQuestion}/>
+				<input type="submit" className="button" value="Submit" onClick={this.submitForms}/>
 			</div>
 			
 	);
