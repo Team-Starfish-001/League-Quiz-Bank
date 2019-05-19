@@ -9,6 +9,9 @@
     "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
     "history": "^4.7.2",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
     "react": "^16.5.2",
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.0",
@@ -32,5 +35,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "CI=true react-scripts test"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  }
 }
