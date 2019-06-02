@@ -1,5 +1,4 @@
 import * as actions from '../actions/actionConstants'
-import { arrowFunctionExpression } from '@babel/types';
 const initialState = {
     quizList: []
 }
