@@ -10,18 +10,18 @@ import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
 const styles = theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   },
   textField: {
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing.unit
   },
   dense: {
-    marginTop: 16,
+    marginTop: 16
   },
   menu: {
-    width: 200,
-  },
+    width: 200
+  }
 });
 class TeacherCreateQuizView extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class TeacherCreateQuizView extends Component {
         answerTwo: '',
         optionOne: '',
         optionTwo: '',
-        optionThree: '',
+        optionThree: ''
       });
     }
     this.state = {
@@ -46,8 +46,8 @@ class TeacherCreateQuizView extends Component {
         desc: '',
         tags: '',
         amt: 10,
-        questions: list,
-      },
+        questions: list
+      }
     };
   }
 
@@ -71,7 +71,7 @@ class TeacherCreateQuizView extends Component {
           answerTwo: '',
           optionOne: '',
           optionTwo: '',
-          optionThree: '',
+          optionThree: ''
         });
       }
     }
@@ -79,8 +79,8 @@ class TeacherCreateQuizView extends Component {
       questionAmtSelectedValue: amt,
       form_data: {
         amt: amt,
-        questions: questions,
-      },
+        questions: questions
+      }
     });
   };
 
@@ -99,8 +99,8 @@ class TeacherCreateQuizView extends Component {
     this.setState({
       form_data: {
         amt: amt,
-        questions: old_list,
-      },
+        questions: old_list
+      }
     });
   };
 
@@ -120,7 +120,7 @@ class TeacherCreateQuizView extends Component {
             margin='normal'
             variant='standard'
             inputProps={{
-              style: { fontSize: 30 },
+              style: { fontSize: 30 }
             }}
           />
           <br />
@@ -157,7 +157,7 @@ class TeacherCreateQuizView extends Component {
                   index={e + 1}
                   handleQuestion={this.handleQuestion}
                 />
-              ),
+              )
             )}
           </CardContent>
         </Card>
@@ -173,7 +173,7 @@ class TeacherCreateQuizView extends Component {
 }
 
 TeacherCreateQuizView.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(TeacherCreateQuizView);
