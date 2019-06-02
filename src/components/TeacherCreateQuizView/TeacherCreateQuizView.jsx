@@ -5,7 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import RmIcon from '@material-ui/icons/Remove';
-import Icon from '@material-ui/core/Icon';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
@@ -26,6 +25,7 @@ const styles = theme => ({
     width: 200
   }
 });
+
 class TeacherCreateQuizView extends Component {
   constructor(props) {
     super(props);
@@ -60,7 +60,6 @@ class TeacherCreateQuizView extends Component {
     } else if (amt < 2) {
       amt = 1;
     }
-
     var questions = [];
     var old_list = this.state.form_data.questions;
     for (var i = 1; i < amt + 1; i++) {
