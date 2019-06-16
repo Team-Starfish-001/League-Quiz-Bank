@@ -75,12 +75,12 @@ class CreateQuestionObject extends Component {
         return (
           <div>
             <TextField
-              id="outlined-name"
-              label="Answer"
+              id='outlined-name'
+              label='Answer'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="answer-1"
+              margin='normal'
+              variant='outlined'
+              name='answer-1'
               value={this.state.answerOne}
               onChange={this.onChangeAnswerOne}
             />
@@ -91,45 +91,45 @@ class CreateQuestionObject extends Component {
         return (
           <div>
             <TextField
-              id="outlined-name"
-              label="Answer"
+              id='outlined-name'
+              label='Answer'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="answer-1"
+              margin='normal'
+              variant='outlined'
+              name='answer-1'
               value={this.state.answerOne}
               onChange={this.onChangeAnswerOne}
             />
             <br />
             <TextField
-              id="outlined-name"
-              label="Option 1"
+              id='outlined-name'
+              label='Option 1'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="option-1"
+              margin='normal'
+              variant='outlined'
+              name='option-1'
               value={this.state.optionOne}
               onChange={this.onChangeOptionOne}
             />
             <br />
             <TextField
-              id="outlined-name"
-              label="Option 2"
+              id='outlined-name'
+              label='Option 2'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="option-2"
+              margin='normal'
+              variant='outlined'
+              name='option-2'
               value={this.state.optionTwo}
               onChange={this.onChangeOptionTwo}
             />
             <br />
             <TextField
-              id="outlined-name"
-              label="Option 3"
+              id='outlined-name'
+              label='Option 3'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="option-3"
+              margin='normal'
+              variant='outlined'
+              name='option-3'
               value={this.state.optionThree}
               onChange={this.onChangeOptionThree}
             />
@@ -140,45 +140,45 @@ class CreateQuestionObject extends Component {
         return (
           <div>
             <TextField
-              id="outlined-name"
-              label="Answer 1"
+              id='outlined-name'
+              label='Answer 1'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="answer-1"
+              margin='normal'
+              variant='outlined'
+              name='answer-1'
               value={this.state.answerOne}
               onChange={this.onChangeAnswerOne}
             />
             <br />
             <TextField
-              id="outlined-name"
-              label="Answer 2"
+              id='outlined-name'
+              label='Answer 2'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="answer-2"
+              margin='normal'
+              variant='outlined'
+              name='answer-2'
               value={this.state.answerTwo}
               onChange={this.onChangeAnswerTwo}
             />
             <br />
             <TextField
-              id="outlined-name"
-              label="Option 1"
+              id='outlined-name'
+              label='Option 1'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="option-1"
+              margin='normal'
+              variant='outlined'
+              name='option-1'
               value={this.state.optionOne}
               onChange={this.onChangeOptionOne}
             />
             <br />
             <TextField
-              id="outlined-name"
-              label="Option 2"
+              id='outlined-name'
+              label='Option 2'
               className={classes.textField}
-              margin="normal"
-              variant="outlined"
-              name="option-2"
+              margin='normal'
+              variant='outlined'
+              name='option-2'
               value={this.state.optionTwo}
               onChange={this.onChangeOptionTwo}
             />
@@ -195,17 +195,17 @@ class CreateQuestionObject extends Component {
         <h4>{this.props.index}.</h4>
         <form id={this.props.index}>
           Question:{' '}
-          <input type="text" name="Question" onChange={this.onChangequestion} />
+          <input type='text' name='Question' onChange={this.onChangequestion} />
           <br />
           Question Type:{' '}
           <select
-            name="questionType"
+            name='questionType'
             value={this.state.questionType}
             onChange={this.onChangeType}
           >
-            <option value="single">Single Choice Answer</option>
-            <option value="multiple">Multiple Choice Answer</option>
-            <option value="fill">Fill in Answer</option>
+            <option value='single'>Single Choice Answer</option>
+            <option value='multiple'>Multiple Choice Answer</option>
+            <option value='fill'>Fill in Answer</option>
           </select>
           <br />
           {this.getAnswerPrompt()}
