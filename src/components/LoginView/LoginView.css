@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+#wrapper {
+  display: block;
+  margin: 0;
+}
+#league_picture_container {
+  float: left;
+  width: 60%;
+}
+#league_picture {
+  position: absolute;
+  height: auto;
+  max-width: 40%;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#content {
+  position: absolute;
+  float: left;
+  top: 50%;
+  left: 75%;
+  border-radius: 6px;
+  padding: 60px;
+  border: 1px solid #c9c9c9;
+  box-shadow: 5px 5px 50px #2e2e2e;
+  transform: translate(-50%, -50%);
+}
+#head {
+  text-align: center;
+  background-color: #3c3c3c;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 1px 1px 1px 1px black;
+  color: white;
+  box-shadow: 1px solid black;
+}
+#head_text {
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 10px solid #313131;
+}
+.default_input {
+  border-radius: 10px;
+  border: none;
+  outline: 0;
+  width: 150px;
+  height: 30px;
+  font-weight: 200;
+  font-size: 17px;
+}
+#username {
+  margin-bottom: 3px;
+}
+#password {
+  margin-bottom: 3px;
+}
+.select_button {
+  outline: 0;
+  border-radius: 20px;
+  margin-top: 20px;
+  border: none;
+  font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+#student_button {
+  margin-right: 4px;
+  transition: background-color 0.5s;
+  background-color: #11bfff;
+}
+#teacher_button {
+  transition: background-color 0.5s;
+  background-color: #75ff9f;
+}
+#student_button:hover {
+  background-color: #d679ff;
+}
+#teacher_button:hover {
+  background-color: #faff75;
+}
+.footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  top: auto;
+}
+#footer_text {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 40px;
+  margin-right: 150px;
+  font-family: 'Raleway';
+  font-weight: 100;
+  font-size: 15px;
+}
+#center {
+  margin-left: 73px;
+  position: absolute;
+  float: left;
+  text-shadow: 1px 1px 1px 1px black;
+  color: white;
+  text-align: center;
+  background-color: #3c3c3c;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #313131;
+  bottom: 0;
+  margin-right: 70px;
+  width: 100%;
+  z-index: 1;
+}
+#panel_left {
+  background-color: #ff772f;
+  float: left;
+  border-top: 3px dashed #313131;
+  border-right: 3px dashed #313131;
+  position: relative;
+  z-index: 4;
+  transition: background-color 0.5s;
+}
+#panel_right {
+  float: right;
+  background-color: #ff772f;
+  border-top: 3px dashed #313131;
+  border-left: 3px dashed #313131;
+  position: relative;
+  z-index: 3;
+  transition: background-color 0.5s;
+}
+#panel_right:hover {
+  background-color: #4b92ce;
+}
+#panel_left:hover {
+  background-color: #4b92ce;
+}
+#github {
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  position: relative;
+  transition: -webkit-filter 0.5s, filter 0.5s, background-color 0.5s;
+}
+#league_bolt {
+  width: 80px;
+  height: 80px;
+  transition: -webkit-filter 0.5s, filter 0.5s;
+}
+#league_bolt:hover {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+#github:hover {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #272727;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff772f;
+  border-radius: 100px;
+}
