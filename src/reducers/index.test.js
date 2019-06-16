@@ -1,6 +1,8 @@
 import * as actions from '../actions/actionConstants';
 import reducer from './index.js';
 import { SINGLE_SELECT_QUESTION, TRUE, FALSE } from '../constants';
+import deepFreeze from 'deep-freeze';
+import deepEqual from 'deep-equal';
 
 const myQuizQuestions = [
   {
@@ -53,5 +55,21 @@ describe('quiz reducer', () => {
         }
       ]
     };
+    deepFreeze(initialState);
+    const addQuizAction = {
+      type: actions.ADD_QUIZ,
+      payload: {
+        name: 'Quiz 1',
+        questions: [
+          {
+            type: SINGLE_SELECT_QUESTION,
+            options: [TRUE, FALSE],
+            answers: [0]
+          }
+        ]
+      }
+    };
+    const actualNewState = reducer(initialState, addQuizAction);
+    expect(deepEqual(actualNewState, newState)).toEqual(true);
   });
 });

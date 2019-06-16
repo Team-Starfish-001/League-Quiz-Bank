@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "deep-equal": "^1.0.1",
     "deep-freeze": "0.0.1"
   }
 }
