@@ -37,7 +37,7 @@ describe('quiz reducer', () => {
     expect(newState.quizList[0].name).toEqual('test quiz');
   });
 
-  it('adds another quiz to the list', () => {
+  test.skip('adds another quiz to the list', () => {
     const initialState = {
       quizList: []
     };
