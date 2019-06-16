@@ -47,5 +47,8 @@
       "prettier --single-quote --write",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "deep-freeze": "0.0.1"
   }
 }
