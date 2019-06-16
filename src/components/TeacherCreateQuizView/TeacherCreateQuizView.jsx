@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import RmIcon from '@material-ui/icons/Remove';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
@@ -50,12 +53,12 @@ class TeacherCreateQuizView extends Component {
       }
     };
   }
-
-  onChange = e => {
-    var amt = parseInt(e.target.value) ? parseInt(e.target.value) : 10;
+  handleQuestionAmt = amt => {
     var old_amt = this.state.form_data.amt;
-    if (amt > 100 || amt < 1) {
-      amt = 10;
+    if (amt > 100) {
+      amt = 100;
+    } else if (amt < 2) {
+      amt = 1;
     }
     var questions = [];
     var old_list = this.state.form_data.questions;
@@ -82,6 +85,12 @@ class TeacherCreateQuizView extends Component {
         questions: questions
       }
     });
+  };
+  addQuestion = e => {
+    this.handleQuestionAmt(this.state.form_data.amt + 1);
+  };
+  delQuestion = e => {
+    this.handleQuestionAmt(this.state.form_data.amt - 1);
   };
 
   handleQuestion = _state => {
@@ -161,6 +170,12 @@ class TeacherCreateQuizView extends Component {
             )}
           </CardContent>
         </Card>
+        <Fab color='primary' aria-label='Add' onClick={this.addQuestion}>
+          <AddIcon />
+        </Fab>
+        <Fab color='primary' aria-label='Rm' onClick={this.delQuestion}>
+          <RmIcon />
+        </Fab>
         <input
           type='submit'
           className='button'

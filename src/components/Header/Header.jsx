@@ -160,7 +160,7 @@ class Header extends React.Component {
                   onClose={this.handleClose}
                 >
                   <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                  <MenuItem onClick={this.handleClose}>Sign out</MenuItem>
+                  <MenuItem button component={Link} to= '/login' >Sign out</MenuItem>
                 </Menu>
               </div>
             )}
