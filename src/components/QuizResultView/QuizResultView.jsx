@@ -1,4 +1,22 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+const styles = {
+  root: {
+    width: '100%',
+    marginTop: 5,
+    overflowX: 'auto'
+  },
+  table: {
+    minWidth: 650
+  }
+};
 
 const resData = [
   {
@@ -33,9 +51,11 @@ class QuizResultView extends React.Component {
     this.state = {
       correct: 0,
       total: 0,
-      quiz: resData
+      quiz: resData,
+      list: []
     };
     this.evalTest();
+    this.generateTableData();
   }
   evalTest() {
     for (var x in this.state.quiz) {
@@ -77,22 +97,65 @@ class QuizResultView extends React.Component {
     }
   }
 
+  createData(index, usr_answer, answer) {
+    return { index: index, usr_answer: usr_answer, answer: answer };
+  }
+
+  generateTableData() {
+    var x = 0;
+    for (var z in this.state.quiz) {
+      x++;
+      var i = this.state.quiz[z];
+      if (i.type === 'free text') {
+        var usr_answer = i.freeTextAnswer;
+        var answer = i.freeTextCorrect;
+      } else if (i.type === 'single select') {
+        console.log(i.answer);
+        var usr_answer = 'A';
+        var answer = i.options[i.correct];
+      } else {
+        var usr_answer = 'a';
+        var answer = 'a';
+      }
+
+      var list = this.state.list;
+      this.setState({
+        list: list.push(this.createData(x, usr_answer, answer))
+      });
+    }
+  }
+
   render() {
+    const classes = styles;
     var percentage = Math.round((this.state.correct / this.state.total) * 100);
     return (
       <div>
         <center>
-          {this.state.correct}
-          <br />
-          ------
-          <br />
-          {this.state.total}
-          <br />
           <h1 style={this.textColor(percentage)}>{percentage}%</h1>
         </center>
+        <Paper className={classes.root}>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Questions #</TableCell>
+                <TableCell align="left">Answer</TableCell>
+                <TableCell align="left">Correct</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {this.state.list.map(row => (
+                <TableRow key={row.name}>
+                  <TableCell align="left">{row.index}</TableCell>
+                  <TableCell align="left">{row.usr_answer}</TableCell>
+                  <TableCell align="left">{row.answer}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Paper>
       </div>
     );
   }
 }
 
-export default QuizResultView;
+export default withStyles(styles)(QuizResultView);
