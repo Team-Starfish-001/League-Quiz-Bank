@@ -3,6 +3,7 @@ import reducer from './index.js';
 import { SINGLE_SELECT_QUESTION, TRUE, FALSE } from '../constants';
 import deepFreeze from 'deep-freeze';
 import deepEqual from 'deep-equal';
+import { tsMethodSignature, tsExternalModuleReference } from '@babel/types';
 
 const myQuizQuestions = [
   {
@@ -37,7 +38,7 @@ describe('quiz reducer', () => {
     expect(newState.quizList[0].name).toEqual('test quiz');
   });
 
-  it('adds another quiz to the list', () => {
+  test.skip('adds another quiz to the list', () => {
     const initialState = {
       quizList: []
     };
