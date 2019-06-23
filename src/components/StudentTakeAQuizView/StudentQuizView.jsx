@@ -1,5 +1,7 @@
 import React from 'react';
 import QuizObject from '../QuizObject/QuizObject';
+import Header from '../Header/Header.jsx';
+
 var data = [
   {
     index: 1,
@@ -56,10 +58,10 @@ var data = [
   }
 ];
 class StudentQuizView extends React.Component {
-
   render() {
     return (
       <div>
+        <Header />
         <QuizObject data={data} />
       </div>
     );
