@@ -37,7 +37,7 @@ describe('quiz reducer', () => {
     expect(newState.quizList[0].name).toEqual('test quiz');
   });
 
-  test.skip('adds another quiz to the list', () => {
+  it('adds another quiz to the list', () => {
     const initialState = {
       quizList: []
     };
@@ -57,7 +57,7 @@ describe('quiz reducer', () => {
     };
     deepFreeze(initialState);
     const addQuizAction = {
-      type: actions.ADD_QUIZ,
+      type: actions.ADD_QUIZ2,
       payload: {
         name: 'Quiz 1',
         questions: [
