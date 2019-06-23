@@ -8,6 +8,7 @@ import RmIcon from '@material-ui/icons/Remove';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
+import Header from '../Header/Header.jsx';
 //testing status
 
 const styles = theme => ({
@@ -121,39 +122,40 @@ class TeacherCreateQuizView extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <form id='data'>
+        <Header />
+        <form id="data">
           <TextField
-            id='title'
-            label='Title'
+            id="title"
+            label="Title"
             className={classes.textField}
-            margin='normal'
-            variant='standard'
+            margin="normal"
+            variant="standard"
             inputProps={{
               style: { fontSize: 30 }
             }}
           />
           <br />
           <TextField
-            id='outlined-name'
-            label='Description'
+            id="outlined-name"
+            label="Description"
             className={classes.textField}
-            margin='normal'
-            variant='outlined'
+            margin="normal"
+            variant="outlined"
           />
           <TextField
-            id='outlined-name'
-            label='Class'
+            id="outlined-name"
+            label="Class"
             className={classes.textField}
-            margin='normal'
-            variant='outlined'
+            margin="normal"
+            variant="outlined"
           />
           <br />
           <TextField
-            name='question_amt'
-            label='Amount of Questions'
+            name="question_amt"
+            label="Amount of Questions"
             className={classes.textField}
-            margin='normal'
-            variant='outlined'
+            margin="normal"
+            variant="outlined"
             onChange={this.onChange}
           />
         </form>
@@ -170,16 +172,16 @@ class TeacherCreateQuizView extends Component {
             )}
           </CardContent>
         </Card>
-        <Fab color='primary' aria-label='Add' onClick={this.addQuestion}>
+        <Fab color="primary" aria-label="Add" onClick={this.addQuestion}>
           <AddIcon />
         </Fab>
-        <Fab color='primary' aria-label='Rm' onClick={this.delQuestion}>
+        <Fab color="primary" aria-label="Rm" onClick={this.delQuestion}>
           <RmIcon />
         </Fab>
         <input
-          type='submit'
-          className='button'
-          value='Submit'
+          type="submit"
+          className="button"
+          value="Submit"
           onClick={this.submitForms()}
         />
       </div>
