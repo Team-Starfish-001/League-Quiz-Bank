@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 import AppRouter from './AppRouter';
