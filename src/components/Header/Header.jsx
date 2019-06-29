@@ -22,18 +22,18 @@ import { Link } from 'react-router-dom';
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20
+    marginRight: 20,
   },
   list: {
-    width: 250
-  }
+    width: 250,
+  },
 };
 
 class Header extends React.Component {
@@ -43,12 +43,12 @@ class Header extends React.Component {
     top: false,
     left: false,
     bottom: false,
-    right: false
+    right: false,
   };
 
   toggleDrawer = (side, open) => () => {
     this.setState({
-      [side]: open
+      [side]: open,
     });
   };
 
@@ -72,19 +72,19 @@ class Header extends React.Component {
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText primary="Home" />
+            <ListItemText primary='Home' />
           </ListItem>
           <ListItem button component={Link} to='/makeQuiz'>
             <ListItemIcon>
               <CreateIcon />
             </ListItemIcon>
-            <ListItemText primary="Create Quiz" />
+            <ListItemText primary='Create Quiz' />
           </ListItem>
           <ListItem>
             <ListItemIcon>
               <AssignmentIcon />
             </ListItemIcon>
-            <ListItemText primary="Quiz Library" />
+            <ListItemText primary='Quiz Library' />
           </ListItem>
         </List>
       </div>
@@ -150,11 +150,11 @@ class Header extends React.Component {
                   anchorEl={anchorEl}
                   anchorOrigin={{
                     vertical: 'top',
-                    horizontal: 'right'
+                    horizontal: 'right',
                   }}
                   transformOrigin={{
                     vertical: 'top',
-                    horizontal: 'right'
+                    horizontal: 'right',
                   }}
                   open={open}
                   onClose={this.handleClose}
@@ -185,7 +185,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Header);

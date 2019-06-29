@@ -9,15 +9,15 @@ var data = [
     type: 'single',
     choices: [
       {
-        answer: '1'
+        answer: '1',
       },
       {
-        answer: '2'
+        answer: '2',
       },
       {
-        answer: '4'
-      }
-    ]
+        answer: '4',
+      },
+    ],
   },
   {
     index: 2,
@@ -25,15 +25,15 @@ var data = [
     type: 'single',
     choices: [
       {
-        answer: 'Indiana'
+        answer: 'Indiana',
       },
       {
-        answer: 'Wyoming'
+        answer: 'Wyoming',
       },
       {
-        answer: 'North America'
-      }
-    ]
+        answer: 'North America',
+      },
+    ],
   },
   {
     index: 3,
@@ -41,21 +41,21 @@ var data = [
     type: 'multiple',
     choices: [
       {
-        answer: '1'
+        answer: '1',
       },
       {
-        answer: '2'
+        answer: '2',
       },
       {
-        answer: '4'
-      }
-    ]
+        answer: '4',
+      },
+    ],
   },
   {
     index: 4,
     prompt: 'Write code',
-    type: 'fill'
-  }
+    type: 'fill',
+  },
 ];
 class StudentQuizView extends React.Component {
   render() {

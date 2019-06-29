@@ -4,7 +4,7 @@ var SidebarStyle = {
   boxSizingProperty: 'border-box',
   padding: '10px',
   width: '80px',
-  float: 'left'
+  float: 'left',
 };
 
 class Sidebar extends React.Component {

@@ -57,7 +57,7 @@ class DataList extends React.Component {
                   <TableCell key={ category }>{ category }</TableCell>
                 ))}
                 <TableCell>
-                  <IconButton variant="contained" onClick={this.handleClick}><MoreVert /></IconButton>
+                  <IconButton variant='contained' onClick={this.handleClick}><MoreVert /></IconButton>
                   <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
                     { this.props.actions.map((action, i) => (
                       <MenuItem onClick={this.handleClose} key={`${action}-${i}`}>{ action }</MenuItem>
@@ -76,7 +76,7 @@ class DataList extends React.Component {
 DataList.propTypes = {
   headers: PropTypes.array.isRequired,
   rows: PropTypes.array.isRequired,
-  actions: PropTypes.array.isRequired
+  actions: PropTypes.array.isRequired,
 };
 
 export default withStyles(styles)(DataList);

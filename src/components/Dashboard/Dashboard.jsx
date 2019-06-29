@@ -14,10 +14,10 @@ var DashboardStyle = {};
 class Dashboard extends React.Component {
   render() {
     return (
-      <div className="dashboard" style={DashboardStyle}>
+      <div className='dashboard' style={DashboardStyle}>
         <Header />
         <div style={{ padding: '50px' }}>
-          <Welcome name="Ian" />
+          <Welcome name='Ian' />
           <h1>Classes:</h1>
           <ClassList data={classListData} />
           <h1>Quizzes:</h1>
