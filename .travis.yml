@@ -6,6 +6,7 @@ cache:
     - node_modules
 script:
   - npm test
+  - npm run lint
   - REACT_APP_BASENAME=/League-Quiz-Bank npm run build # to fix react-router giving blank page
 deploy:
   provider: pages
