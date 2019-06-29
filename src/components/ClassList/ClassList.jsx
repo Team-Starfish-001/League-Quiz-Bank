@@ -9,7 +9,7 @@ class ClassList extends React.Component {
 
     return (
       <DataList headers={ headers } rows={ classes } actions={ actions }/>
-    )
+    );
   }
 }
 

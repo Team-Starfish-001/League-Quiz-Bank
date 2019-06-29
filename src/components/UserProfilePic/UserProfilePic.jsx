@@ -6,7 +6,7 @@ class UserProfilePic extends React.Component {
     if(imgSrc == null) {
       imgSrc = altProfilePic;
     }
-    return imgSrc
+    return imgSrc;
   }
   render() {
     return(

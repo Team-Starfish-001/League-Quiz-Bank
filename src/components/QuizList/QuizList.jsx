@@ -9,7 +9,7 @@ class QuizList extends React.Component {
 
     return (
       <DataList headers={ headers } rows={ quizzes } actions={ actions }/>
-    )
+    );
   }
 }
 

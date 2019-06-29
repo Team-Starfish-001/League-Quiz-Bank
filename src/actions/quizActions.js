@@ -11,5 +11,5 @@ export function addQuestions(questionArray) {
   return {
     type: action.ADD_QUESTIONS,
     questionArray,
-  }
+  };
 }
