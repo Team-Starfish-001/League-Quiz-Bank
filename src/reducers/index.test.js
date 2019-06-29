@@ -28,7 +28,7 @@ describe('quiz reducer', () => {
   it('should create a quiz', () => {
     const addQuizAction = {
       type: actions.ADD_QUIZ,
-      name: 'test quiz'
+      name: 'test quiz',
     };
     const newState = reducer(undefined, addQuizAction);
     console.log(newState);
