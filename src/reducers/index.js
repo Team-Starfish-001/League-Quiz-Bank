@@ -1,13 +1,12 @@
 import * as actions from '../actions/actionConstants';
 const initialState = {
-  quizList: [],
+  dashboardQuizList: [],
 };
 
 function quizReducer(state = initialState, action) {
   switch (action.type) {
-  case actions.ADD_QUIZ: {
-    const newQuizList = [...state.quizList, action.payload];
-    return Object.assign({}, state, { quizList: newQuizList });
+  case actions.SET_QUIZLIST: {
+    return Object.assign({}, state, { dashboardQuizList: action.payload });
   }
   default:
     return state;
