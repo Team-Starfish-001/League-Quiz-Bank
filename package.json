@@ -45,5 +45,9 @@
       "eslint --fix --ext js,jsx src",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "deep-equal": "^1.0.1",
+    "deep-freeze": "0.0.1"
   }
 }

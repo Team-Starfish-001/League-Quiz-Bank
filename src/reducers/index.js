@@ -12,10 +12,20 @@ function quizReducer(state = initialState, action) {
     };
     const newQuizList = [...state.quizList];
     newQuizList.push(myNewQuiz);
-    return Object.assign({}, state, {quizList: newQuizList});
-  } 
+    return Object.assign({}, state, { quizList: newQuizList });
+  }
+  case actions.ADD_QUIZ2: {
+    const myNewQuiz = {
+      name: action.name,
+      questions: action.questions,
+    };
+    const newQuizList = [...state.quizList];
+    newQuizList.push(myNewQuiz);
+    return Object.assign({}, state, { quizList: newQuizList });
+  }
 
-  default: return state;
+  default:
+    return state;
   }
 }
 export default quizReducer;
