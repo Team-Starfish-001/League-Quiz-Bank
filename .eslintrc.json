@@ -9,6 +9,7 @@
     "indent": ["error", 2],
     "comma-dangle": ["error", "always-multiline"],
     "spaced-comment": ["error", "always"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "eol-last": ["error", "always"]
   }
 }
