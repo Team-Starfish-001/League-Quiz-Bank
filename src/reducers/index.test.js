@@ -29,7 +29,16 @@ describe('quiz reducer', () => {
   it('should create a quiz', () => {
     const addQuizAction = {
       type: actions.ADD_QUIZ,
-      name: 'test quiz',
+      payload: {
+        name: 'test quiz',
+        questions: [
+          {
+            type: SINGLE_SELECT_QUESTION,
+            options: [TRUE, FALSE],
+            answers: [0],
+          },
+        ],
+      },
     };
     const newState = reducer(undefined, addQuizAction);
     console.log(newState);
@@ -37,7 +46,7 @@ describe('quiz reducer', () => {
     expect(newState.quizList[0].name).toEqual('test quiz');
   });
 
-  test.skip('adds another quiz to the list', () => {
+  it('adds another quiz to the list', () => {
     const initialState = {
       quizList: [],
     };
@@ -57,7 +66,7 @@ describe('quiz reducer', () => {
     };
     deepFreeze(initialState);
     const addQuizAction = {
-      type: actions.ADD_QUIZ2,
+      type: actions.ADD_QUIZ,
       payload: {
         name: 'Quiz 1',
         questions: [
