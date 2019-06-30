@@ -9,23 +9,23 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
 import Header from '../Header/Header.jsx';
-//testing status
+// testing status
 
 const styles = theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   textField: {
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
+    marginRight: theme.spacing.unit,
   },
   dense: {
-    marginTop: 16
+    marginTop: 16,
   },
   menu: {
-    width: 200
-  }
+    width: 200,
+  },
 });
 class TeacherCreateQuizView extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class TeacherCreateQuizView extends Component {
         answerTwo: '',
         optionOne: '',
         optionTwo: '',
-        optionThree: ''
+        optionThree: '',
       });
     }
     this.state = {
@@ -50,8 +50,8 @@ class TeacherCreateQuizView extends Component {
         desc: '',
         tags: '',
         amt: 10,
-        questions: list
-      }
+        questions: list,
+      },
     };
   }
   handleQuestionAmt = amt => {
@@ -75,7 +75,7 @@ class TeacherCreateQuizView extends Component {
           answerTwo: '',
           optionOne: '',
           optionTwo: '',
-          optionThree: ''
+          optionThree: '',
         });
       }
     }
@@ -83,8 +83,8 @@ class TeacherCreateQuizView extends Component {
       questionAmtSelectedValue: amt,
       form_data: {
         amt: amt,
-        questions: questions
-      }
+        questions: questions,
+      },
     });
   };
   addQuestion = e => {
@@ -109,8 +109,8 @@ class TeacherCreateQuizView extends Component {
     this.setState({
       form_data: {
         amt: amt,
-        questions: old_list
-      }
+        questions: old_list,
+      },
     });
   };
 
@@ -123,39 +123,39 @@ class TeacherCreateQuizView extends Component {
     return (
       <div>
         <Header />
-        <form id="data">
+        <form id='data'>
           <TextField
-            id="title"
-            label="Title"
+            id='title'
+            label='Title'
             className={classes.textField}
-            margin="normal"
-            variant="standard"
+            margin='normal'
+            variant='standard'
             inputProps={{
-              style: { fontSize: 30 }
+              style: { fontSize: 30 },
             }}
           />
           <br />
           <TextField
-            id="outlined-name"
-            label="Description"
+            id='outlined-name'
+            label='Description'
             className={classes.textField}
-            margin="normal"
-            variant="outlined"
+            margin='normal'
+            variant='outlined'
           />
           <TextField
-            id="outlined-name"
-            label="Class"
+            id='outlined-name'
+            label='Class'
             className={classes.textField}
-            margin="normal"
-            variant="outlined"
+            margin='normal'
+            variant='outlined'
           />
           <br />
           <TextField
-            name="question_amt"
-            label="Amount of Questions"
+            name='question_amt'
+            label='Amount of Questions'
             className={classes.textField}
-            margin="normal"
-            variant="outlined"
+            margin='normal'
+            variant='outlined'
             onChange={this.onChange}
           />
         </form>
@@ -172,16 +172,16 @@ class TeacherCreateQuizView extends Component {
             )}
           </CardContent>
         </Card>
-        <Fab color="primary" aria-label="Add" onClick={this.addQuestion}>
+        <Fab color='primary' aria-label='Add' onClick={this.addQuestion}>
           <AddIcon />
         </Fab>
-        <Fab color="primary" aria-label="Rm" onClick={this.delQuestion}>
+        <Fab color='primary' aria-label='Rm' onClick={this.delQuestion}>
           <RmIcon />
         </Fab>
         <input
-          type="submit"
-          className="button"
-          value="Submit"
+          type='submit'
+          className='button'
+          value='Submit'
           onClick={this.submitForms()}
         />
       </div>
@@ -190,7 +190,7 @@ class TeacherCreateQuizView extends Component {
 }
 
 TeacherCreateQuizView.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(TeacherCreateQuizView);

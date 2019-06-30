@@ -25,10 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext js,jsx src"
   },
   "browserslist": [
     ">0.2%",
@@ -39,12 +37,12 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "CI=true react-scripts test"
+      "pre-push": "CI=true react-scripts test && eslint --ext js,jsx src"
     }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --single-quote --write",
+      "eslint --fix --ext js,jsx src",
       "git add"
     ]
   },

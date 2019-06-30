@@ -3,34 +3,33 @@ import reducer from './index.js';
 import { SINGLE_SELECT_QUESTION, TRUE, FALSE } from '../constants';
 import deepFreeze from 'deep-freeze';
 import deepEqual from 'deep-equal';
-import { tsMethodSignature, tsExternalModuleReference } from '@babel/types';
 
-const myQuizQuestions = [
-  {
-    type: 'single select',
-    options: ['blah', 'blah', 'blah'],
-    answers: [1],
-    freeTextAnswer: null
-  },
-  {
-    type: 'multi select',
-    options: ['blah', 'blah', 'blah'],
-    answers: [1, 2],
-    freeTextAnswer: null
-  },
-  {
-    type: 'free text',
-    options: [],
-    answers: [],
-    freeTextAnswer: 'answer'
-  }
-];
+// const myQuizQuestions = [
+//   {
+//     type: 'single select',
+//     options: ['blah', 'blah', 'blah'],
+//     answers: [1],
+//     freeTextAnswer: null,
+//   },
+//   {
+//     type: 'multi select',
+//     options: ['blah', 'blah', 'blah'],
+//     answers: [1, 2],
+//     freeTextAnswer: null,
+//   },
+//   {
+//     type: 'free text',
+//     options: [],
+//     answers: [],
+//     freeTextAnswer: 'answer',
+//   },
+// ];
 
 describe('quiz reducer', () => {
   it('should create a quiz', () => {
     const addQuizAction = {
       type: actions.ADD_QUIZ,
-      name: 'test quiz'
+      name: 'test quiz',
     };
     const newState = reducer(undefined, addQuizAction);
     console.log(newState);
@@ -40,7 +39,7 @@ describe('quiz reducer', () => {
 
   test.skip('adds another quiz to the list', () => {
     const initialState = {
-      quizList: []
+      quizList: [],
     };
     const newState = {
       quizList: [
@@ -50,11 +49,11 @@ describe('quiz reducer', () => {
             {
               type: SINGLE_SELECT_QUESTION,
               options: [TRUE, FALSE],
-              answers: [0]
-            }
-          ]
-        }
-      ]
+              answers: [0],
+            },
+          ],
+        },
+      ],
     };
     deepFreeze(initialState);
     const addQuizAction = {
@@ -65,10 +64,10 @@ describe('quiz reducer', () => {
           {
             type: SINGLE_SELECT_QUESTION,
             options: [TRUE, FALSE],
-            answers: [0]
-          }
-        ]
-      }
+            answers: [0],
+          },
+        ],
+      },
     };
     const actualNewState = reducer(initialState, addQuizAction);
     expect(deepEqual(actualNewState, newState)).toEqual(true);

@@ -6,18 +6,18 @@ import PropTypes from 'prop-types';
 const styles = theme => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   textField: {
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
+    marginRight: theme.spacing.unit,
   },
   dense: {
-    marginTop: 16
+    marginTop: 16,
   },
   menu: {
-    width: 200
-  }
+    width: 200,
+  },
 });
 
 class CreateQuestionObject extends Component {
@@ -31,7 +31,7 @@ class CreateQuestionObject extends Component {
       answerTwo: '',
       optionOne: '',
       optionTwo: '',
-      optionThree: ''
+      optionThree: '',
     };
   }
   QuestionChange() {
@@ -45,7 +45,7 @@ class CreateQuestionObject extends Component {
         answerTwo: '',
         optionOne: '',
         optionTwo: '',
-        optionThree: ''
+        optionThree: '',
       },
       this.QuestionChange
     );
@@ -71,122 +71,122 @@ class CreateQuestionObject extends Component {
   getAnswerPrompt() {
     const { classes } = this.props;
     switch (this.state.questionType) {
-      case 'fill':
-        return (
-          <div>
-            <TextField
-              id='outlined-name'
-              label='Answer'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='answer-1'
-              value={this.state.answerOne}
-              onChange={this.onChangeAnswerOne}
-            />
-            <br />
-          </div>
-        );
-      case 'single':
-        return (
-          <div>
-            <TextField
-              id='outlined-name'
-              label='Answer'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='answer-1'
-              value={this.state.answerOne}
-              onChange={this.onChangeAnswerOne}
-            />
-            <br />
-            <TextField
-              id='outlined-name'
-              label='Option 1'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='option-1'
-              value={this.state.optionOne}
-              onChange={this.onChangeOptionOne}
-            />
-            <br />
-            <TextField
-              id='outlined-name'
-              label='Option 2'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='option-2'
-              value={this.state.optionTwo}
-              onChange={this.onChangeOptionTwo}
-            />
-            <br />
-            <TextField
-              id='outlined-name'
-              label='Option 3'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='option-3'
-              value={this.state.optionThree}
-              onChange={this.onChangeOptionThree}
-            />
-            <br />
-          </div>
-        );
-      case 'multiple':
-        return (
-          <div>
-            <TextField
-              id='outlined-name'
-              label='Answer 1'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='answer-1'
-              value={this.state.answerOne}
-              onChange={this.onChangeAnswerOne}
-            />
-            <br />
-            <TextField
-              id='outlined-name'
-              label='Answer 2'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='answer-2'
-              value={this.state.answerTwo}
-              onChange={this.onChangeAnswerTwo}
-            />
-            <br />
-            <TextField
-              id='outlined-name'
-              label='Option 1'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='option-1'
-              value={this.state.optionOne}
-              onChange={this.onChangeOptionOne}
-            />
-            <br />
-            <TextField
-              id='outlined-name'
-              label='Option 2'
-              className={classes.textField}
-              margin='normal'
-              variant='outlined'
-              name='option-2'
-              value={this.state.optionTwo}
-              onChange={this.onChangeOptionTwo}
-            />
-            <br />
-          </div>
-        );
-      default:
-        return null;
+    case 'fill':
+      return (
+        <div>
+          <TextField
+            id='outlined-name'
+            label='Answer'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='answer-1'
+            value={this.state.answerOne}
+            onChange={this.onChangeAnswerOne}
+          />
+          <br />
+        </div>
+      );
+    case 'single':
+      return (
+        <div>
+          <TextField
+            id='outlined-name'
+            label='Answer'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='answer-1'
+            value={this.state.answerOne}
+            onChange={this.onChangeAnswerOne}
+          />
+          <br />
+          <TextField
+            id='outlined-name'
+            label='Option 1'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='option-1'
+            value={this.state.optionOne}
+            onChange={this.onChangeOptionOne}
+          />
+          <br />
+          <TextField
+            id='outlined-name'
+            label='Option 2'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='option-2'
+            value={this.state.optionTwo}
+            onChange={this.onChangeOptionTwo}
+          />
+          <br />
+          <TextField
+            id='outlined-name'
+            label='Option 3'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='option-3'
+            value={this.state.optionThree}
+            onChange={this.onChangeOptionThree}
+          />
+          <br />
+        </div>
+      );
+    case 'multiple':
+      return (
+        <div>
+          <TextField
+            id='outlined-name'
+            label='Answer 1'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='answer-1'
+            value={this.state.answerOne}
+            onChange={this.onChangeAnswerOne}
+          />
+          <br />
+          <TextField
+            id='outlined-name'
+            label='Answer 2'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='answer-2'
+            value={this.state.answerTwo}
+            onChange={this.onChangeAnswerTwo}
+          />
+          <br />
+          <TextField
+            id='outlined-name'
+            label='Option 1'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='option-1'
+            value={this.state.optionOne}
+            onChange={this.onChangeOptionOne}
+          />
+          <br />
+          <TextField
+            id='outlined-name'
+            label='Option 2'
+            className={classes.textField}
+            margin='normal'
+            variant='outlined'
+            name='option-2'
+            value={this.state.optionTwo}
+            onChange={this.onChangeOptionTwo}
+          />
+          <br />
+        </div>
+      );
+    default:
+      return null;
     }
   }
   render() {
@@ -216,7 +216,7 @@ class CreateQuestionObject extends Component {
   }
 }
 CreateQuestionObject.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(CreateQuestionObject);

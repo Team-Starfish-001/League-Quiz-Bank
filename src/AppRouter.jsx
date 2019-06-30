@@ -11,10 +11,10 @@ function AppRouter() {
   return (
     <div>
       <Router basename={basename}>
-        <Route path="/login" exact component={LoginView} />
-        <Route path="/" exact component={Dashboard} />
-        <Route path="/takeQuiz" exact component={StudentQuizView} />
-        <Route path="/makeQuiz" exact component={TeacherCreateQuizView} />
+        <Route path='/login' exact component={LoginView} />
+        <Route path='/' exact component={Dashboard} />
+        <Route path='/takeQuiz' exact component={StudentQuizView} />
+        <Route path='/makeQuiz' exact component={TeacherCreateQuizView} />
       </Router>
     </div>
   );

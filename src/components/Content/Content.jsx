@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 // import QuizList from '../QuizList/QuizList.jsx';
 
 // var ContentStyle = {

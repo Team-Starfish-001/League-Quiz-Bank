@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 
 function TabContainer(props) {
   return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
+    <Typography component='div' style={{ padding: 8 * 3 }}>
       {props.data.class}
     </Typography>
   );
@@ -36,7 +36,7 @@ class TabbedContainer extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position='static'>
           <Tabs value={value} onChange={this.handleChange}>
             {this.props.data.map((e)=><Tab label={e.class}/>)}
           </Tabs>
