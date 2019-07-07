@@ -23,16 +23,16 @@ const resData = [
     correct: [1],
     freeTextCorrect: null,
     type: 'single select',
-    options: ['blah', 'blah', 'blah'],
+    options: ['blah', 'blah', 'blassh'],
     answers: [1],
     freeTextAnswer: null
   },
   {
-    correct: [2, 3],
+    correct: [1, 2],
     freeTextCorrect: null,
     type: 'multi select',
-    options: ['blah', 'blah', 'blah'],
-    answers: [1, 2],
+    options: ['blah1', 'blah2', 'blah3'],
+    answers: [0, 1],
     freeTextAnswer: null
   },
   {
@@ -57,9 +57,10 @@ class QuizResultView extends React.Component {
     this.evalTest();
     this.generateTableData();
   }
+
   evalTest() {
-    for (var x in this.state.quiz) {
-      var i = this.state.quiz[x];
+    for (var y in this.state.quiz) {
+      var i = this.state.quiz[y];
       this.setState({
         total: this.state.total++
       });
@@ -78,10 +79,7 @@ class QuizResultView extends React.Component {
         default:
           correct = false;
       }
-      if (correct)
-        this.setState({
-          correct: this.state.correct++
-        });
+      if (correct) this.setState({ correct: this.state.correct++ });
     }
   }
 
@@ -103,19 +101,24 @@ class QuizResultView extends React.Component {
 
   generateTableData() {
     var x = 0;
+    var usr_answer = '';
+    var answer = '';
     for (var z in this.state.quiz) {
       x++;
       var i = this.state.quiz[z];
       if (i.type === 'free text') {
-        var usr_answer = i.freeTextAnswer;
-        var answer = i.freeTextCorrect;
+        usr_answer = i.freeTextAnswer;
+        answer = i.freeTextCorrect;
       } else if (i.type === 'single select') {
-        console.log(i.answer);
-        var usr_answer = 'A';
-        var answer = i.options[i.correct];
+        usr_answer = i.options[i.answers];
+        answer = i.options[i.correct];
       } else {
-        var usr_answer = 'a';
-        var answer = 'a';
+        usr_answer = '';
+        answer = '';
+        for (var y = 0; y < i.answers.length; y++) {
+          usr_answer += i.options[i.answers[y]] + ' ';
+          answer += i.options[i.correct[y]] + ' ';
+        }
       }
 
       var list = this.state.list;
