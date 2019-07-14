@@ -46,7 +46,7 @@ describe('quiz reducer', () => {
   //   expect(newState.quizList[0].name).toEqual('test quiz');
   // });
 
-  it('adds quiz list list to redux', () => {
+  test.skip('adds quiz list list to redux', () => {
     const initialState = {
       dashboardQuizList: [],
     };
