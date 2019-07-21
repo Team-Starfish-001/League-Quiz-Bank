@@ -1,2 +1,3 @@
-export const ADD_QUIZ = 'ADD_QUIZ';
+export const SET_QUIZLIST = 'SET_QUIZLIST';
 export const ADD_QUESTIONS = 'ADD_QUESTIONS';
+export const DISPLAY_QUIZ = 'DISPLAY_QUIZ';
