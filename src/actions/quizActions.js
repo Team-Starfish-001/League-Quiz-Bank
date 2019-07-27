@@ -2,7 +2,7 @@ import * as action from './actionConstants';
 
 // export function addQuiz(name) {
 //   return {
-//     type: action.ADD_QUIZ, 
+//     type: action.ADD_QUIZ,
 //     name,
 //   };
 // }
@@ -14,9 +14,6 @@ export function addQuestions(questionArray) {
   };
 }
 
-export function displayQuiz(quizObject) {
-  return {
-    type: action.DISPLAY_QUIZ,
-    quizObject,
-  };
+export function setQuizTitle(title) {
+  return { type: action.SET_TITLE, title };
 }
