@@ -1,13 +1,5 @@
 import * as actionTypes from '../actions/actionConstants';
-
-/*      DEFAULT QUESTION: {
-            id: 0,
-            questionType: "single",
-            question: "",
-            answers:[],
-            options:[]
-        }
-*/
+// import { updateObject, updateItemInArray } from './utils';
 
 const initialState = {
   title: '',

@@ -1,4 +1,5 @@
 import * as actions from '../actions/actionConstants';
+import { updateObject } from './utils';
 
 const initialState = {
   dashboardQuizList: [
@@ -12,7 +13,7 @@ const initialState = {
 function dashboard(state = initialState, action) {
   switch (action.type) {
   case actions.SET_QUIZLIST:
-    return Object.assign({}, state, { dashboardQuizList: action.payload });
+    return updateObject(state, { dashboardQuizList: action.payload });
   default:
     return state;
   }
