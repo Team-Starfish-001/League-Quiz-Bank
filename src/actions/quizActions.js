@@ -2,11 +2,12 @@ import * as action from './actionConstants';
 
 // export function addQuiz(name) {
 //   return {
-//     type: action.ADD_QUIZ, 
+//     type: action.ADD_QUIZ,
 //     name,
 //   };
 // }
 
+// I think maybe change this to add a single question, then also create editQuestion actions
 export function addQuestions(questionArray) {
   return {
     type: action.ADD_QUESTIONS,
@@ -14,9 +15,6 @@ export function addQuestions(questionArray) {
   };
 }
 
-export function displayQuiz(quizObject) {
-  return {
-    type: action.DISPLAY_QUIZ,
-    quizObject,
-  };
+export function setQuizTitle(title) {
+  return { type: action.SET_TITLE, title };
 }

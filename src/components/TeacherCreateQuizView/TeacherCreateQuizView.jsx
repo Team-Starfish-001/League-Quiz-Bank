@@ -9,6 +9,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
 import Header from '../Header/Header.jsx';
+// import { setQuizTitle } from '../../actions/quizActions';
+
 // testing status
 
 const styles = theme => ({
@@ -31,7 +33,8 @@ class TeacherCreateQuizView extends Component {
   constructor(props) {
     super(props);
     var list = [];
-    for (var i = 1; i < 11; i++) {
+    const questionAmt = 1;
+    for (var i = 1; i <= questionAmt; i++) {
       list.push({
         id: i,
         questionType: 'single',
@@ -44,12 +47,12 @@ class TeacherCreateQuizView extends Component {
       });
     }
     this.state = {
-      questionAmtSelectedValue: 10,
+      questionAmtSelectedValue: questionAmt,
       form_data: {
         title: '',
         desc: '',
         tags: '',
-        amt: 10,
+        amt: questionAmt,
         questions: list,
       },
     };
@@ -162,14 +165,9 @@ class TeacherCreateQuizView extends Component {
         <br />
         <Card className={classes.card}>
           <CardContent>
-            {Array.from(Array(this.state.questionAmtSelectedValue).keys()).map(
-              e => (
-                <CreateQuestionObject
-                  index={e + 1}
-                  handleQuestion={this.handleQuestion}
-                />
-              )
-            )}
+            {Array.from(Array(this.state.questionAmtSelectedValue).keys()).map(e => (
+              <CreateQuestionObject index={e + 1} handleQuestion={this.handleQuestion} />
+            ))}
           </CardContent>
         </Card>
         <Fab color='primary' aria-label='Add' onClick={this.addQuestion}>
@@ -178,12 +176,7 @@ class TeacherCreateQuizView extends Component {
         <Fab color='primary' aria-label='Rm' onClick={this.delQuestion}>
           <RmIcon />
         </Fab>
-        <input
-          type='submit'
-          className='button'
-          value='Submit'
-          onClick={this.submitForms()}
-        />
+        <input type='submit' className='button' value='Submit' onClick={this.submitForms()} />
       </div>
     );
   }
@@ -193,4 +186,7 @@ TeacherCreateQuizView.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TeacherCreateQuizView);
+const StyledComponent = withStyles(styles)(TeacherCreateQuizView);
+export default StyledComponent;
+// const mapStateToProps = state => {};
+// export default connect(

@@ -35,6 +35,7 @@ class CreateQuestionObject extends Component {
     };
   }
   QuestionChange() {
+    console.log('Hey here we are');
     this.props.handleQuestion(this.state);
   }
   onChangeType = e => {
@@ -98,7 +99,6 @@ class CreateQuestionObject extends Component {
             variant='outlined'
             name='answer-1'
             value={this.state.answerOne}
-            onChange={this.onChangeAnswerOne}
           />
           <br />
           <TextField
@@ -109,7 +109,6 @@ class CreateQuestionObject extends Component {
             variant='outlined'
             name='option-1'
             value={this.state.optionOne}
-            onChange={this.onChangeOptionOne}
           />
           <br />
           <TextField
@@ -120,7 +119,6 @@ class CreateQuestionObject extends Component {
             variant='outlined'
             name='option-2'
             value={this.state.optionTwo}
-            onChange={this.onChangeOptionTwo}
           />
           <br />
           <TextField
@@ -131,7 +129,6 @@ class CreateQuestionObject extends Component {
             variant='outlined'
             name='option-3'
             value={this.state.optionThree}
-            onChange={this.onChangeOptionThree}
           />
           <br />
         </div>
@@ -194,15 +191,10 @@ class CreateQuestionObject extends Component {
       <div>
         <h4>{this.props.index}.</h4>
         <form id={this.props.index}>
-          Question:{' '}
-          <input type='text' name='Question' onChange={this.onChangequestion} />
+          Question: <input type='text' name='Question' onChange={this.onChangequestion} />
           <br />
           Question Type:{' '}
-          <select
-            name='questionType'
-            value={this.state.questionType}
-            onChange={this.onChangeType}
-          >
+          <select name='questionType' value={this.state.questionType} onChange={this.onChangeType}>
             <option value='single'>Single Choice Answer</option>
             <option value='multiple'>Multiple Choice Answer</option>
             <option value='fill'>Fill in Answer</option>
