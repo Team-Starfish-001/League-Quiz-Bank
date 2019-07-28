@@ -24,11 +24,11 @@ function quiz(state = initialState, action) {
   case actionTypes.ADD_QUESTION:
     return { ...state, questions: [...state.questions, action.newQuestion] };
   case actionTypes.UPDATE_QUESTION:
-    return { ...state, questions: [...state.questions.slice(0, index), action.updatedQuestion, ...state.questions.slice(index + 1, state.questions.length)] };
+    return { ...state, questions: [...state.questions.slice(0, action.index), action.updatedQuestion, ...state.questions.slice(action.index + 1, state.questions.length)] };
   case actionTypes.REMOVE_QUESTION:
-      return { ...state, questions: [...state.questions.splice(action.index, 1)] };
+    return { ...state, questions: [...state.questions.splice(action.index, 1)] };
   case actionTypes.SAVE_QUIZ:
-      return action.quiz;
+    return action.quiz;
   default:
     return state;
   }

@@ -30,7 +30,7 @@ const style_css = {
   "backgroundClip":"padding-box",
   "border":"1px solid #ced4da",
   "borderRadius":"0.25rem",
-  "transition":"border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out"
+  "transition":"border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
 };
 
 class CreateQuestionObject extends Component {
