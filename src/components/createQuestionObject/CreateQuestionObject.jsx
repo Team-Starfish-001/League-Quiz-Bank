@@ -19,6 +19,19 @@ const styles = theme => ({
     width: 200,
   },
 });
+const style_css = {  
+  "display":"block",
+  "width":"20%",
+  "padding":"0.375rem 0.75rem",
+  "fontSize":"1rem",
+  "lineHeight":"1.5",
+  "color":"#495057",
+  "backgroundColor":"#fff",
+  "backgroundClip":"padding-box",
+  "border":"1px solid #ced4da",
+  "borderRadius":"0.25rem",
+  "transition":"border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out"
+};
 
 class CreateQuestionObject extends Component {
   constructor(props) {
@@ -35,7 +48,6 @@ class CreateQuestionObject extends Component {
     };
   }
   QuestionChange() {
-    console.log('Hey here we are');
     this.props.handleQuestion(this.state);
   }
   onChangeType = e => {
@@ -191,7 +203,7 @@ class CreateQuestionObject extends Component {
       <div>
         <h4>{this.props.index}.</h4>
         <form id={this.props.index}>
-          Question: <input type='text' name='Question' onChange={this.onChangequestion} />
+          Question: <input type='text' style={style_css} name='Question' onChange={this.onChangequestion} />
           <br />
           Question Type:{' '}
           <select name='questionType' value={this.state.questionType} onChange={this.onChangeType}>
