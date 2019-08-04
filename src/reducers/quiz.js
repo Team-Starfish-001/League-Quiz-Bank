@@ -9,7 +9,7 @@ const initialQuestionState = {
 };
 
 const initialState = {
-  title: '',
+  title: 'Heyo!',
   description: '',
   quizClass: '',
   level: '',
@@ -34,7 +34,7 @@ function quiz(state = initialState, action) {
   case actionTypes.UPDATE_OPTION_TEXT:
   case actionTypes.ADD_OPTION:
   case actionTypes.REMOVE_OPTION:
-  case actionTypes.SET_OPTION_AS_ANSWER:
+  case actionTypes.TOGGLE_OPTION_AS_ANSWER:
     return {
       ...state,
       questions: [

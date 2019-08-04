@@ -151,6 +151,8 @@ class TeacherCreateQuizView extends Component {
             inputProps={{
               style: { fontSize: 30 },
             }}
+            value={this.props.title}
+            onChange={event => this.props.setQuizTitle(event.target.value)}
           />
           <br />
           <TextField
@@ -191,7 +193,7 @@ class TeacherCreateQuizView extends Component {
         <Fab color='primary' aria-label='Rm' onClick={this.delQuestion}>
           <RmIcon />
         </Fab>
-        <input type='submit' className='button' value='Submit' onClick={() => this.submitForms()} />
+        <input type='button' className='button' value='Save Quiz' onClick={this.props.saveQuiz} />
       </div>
     );
   }
