@@ -13,22 +13,30 @@ function quiz(state = initialState, action) {
   switch (action.type) {
   case actionTypes.SET_TITLE:
     return { ...state, title: action.title };
-  case actionTypes.SET_DESC:
-    return { ...state, description: action.desc };
+  case actionTypes.SET_DESCRIPTION:
+    return { ...state, description: action.description };
   case actionTypes.SET_LEVEL:
-    return { ...state, level: action.lvl };
+    return { ...state, level: action.level };
   case actionTypes.SET_QUIZ_CLASS:
-    return { ...state, quizClass: action.class_ };
+    return { ...state, quizClass: action.quizClass };
   case actionTypes.DISPLAY_QUIZ:
     return { ...state, questions: action.questions };
   case actionTypes.ADD_QUESTION:
     return { ...state, questions: [...state.questions, action.newQuestion] };
   case actionTypes.UPDATE_QUESTION:
-    return { ...state, questions: [...state.questions.slice(0, action.index), action.updatedQuestion, ...state.questions.slice(action.index + 1, state.questions.length)] };
+    return {
+      ...state,
+      questions: [
+        ...state.questions.slice(0, action.questionIndex),
+        action.updatedQuestion,
+        ...state.questions.slice(action.questionIndex + 1, state.questions.length),
+      ],
+    };
   case actionTypes.REMOVE_QUESTION:
-    return { ...state, questions: [...state.questions.splice(action.index, 1)] };
+    return { ...state, questions: [...state.questions.splice(action.questionIndex, 1)] };
   case actionTypes.SAVE_QUIZ:
-    return action.quiz;
+    console.log(state);
+    return state;
   default:
     return state;
   }
