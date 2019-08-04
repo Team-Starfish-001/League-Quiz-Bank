@@ -31,10 +31,9 @@ export function setQuizClass(quizClass) {
   return { type: action.SET_QUIZ_CLASS, quizClass };
 }
 
-export function addQuestion(newQuestion) {
+export function addQuestion() {
   return {
     type: action.ADD_QUESTION,
-    newQuestion,
   };
 }
 
@@ -57,5 +56,40 @@ export function saveQuiz(quiz) {
   return {
     type: action.SAVE_QUIZ,
     quiz,
+  };
+}
+
+export function updateQuestionPrompt(prompt) {
+  return {
+    type: action.UPDATE_PROMPT,
+    prompt,
+  };
+}
+
+export function updateOptionText(optionText, optionIndex) {
+  return {
+    type: action.UPDATE_OPTION_TEXT,
+    optionText,
+    optionIndex,
+  };
+}
+
+export function addOption() {
+  return {
+    type: action.ADD_OPTION,
+  };
+}
+
+export function removeQuestionOption(optionIndex) {
+  return {
+    type: action.REMOVE_OPTION,
+    optionIndex,
+  };
+}
+
+export function toggleQuestionOptionAsAnswer(optionIndex) {
+  return {
+    type: action.TOGGLE_OPTION_AS_ANSWER,
+    optionIndex,
   };
 }
