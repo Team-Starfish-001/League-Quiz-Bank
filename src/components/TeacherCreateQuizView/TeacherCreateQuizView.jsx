@@ -176,7 +176,7 @@ class TeacherCreateQuizView extends Component {
         <Fab color='primary' aria-label='Rm' onClick={this.delQuestion}>
           <RmIcon />
         </Fab>
-        <input type='submit' className='button' value='Submit' onClick={this.submitForms()} />
+        <input type='submit' className='button' value='Submit' onClick={() => this.submitForms()} />
       </div>
     );
   }
