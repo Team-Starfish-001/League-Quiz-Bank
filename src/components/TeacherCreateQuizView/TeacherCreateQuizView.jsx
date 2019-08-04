@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
@@ -9,7 +10,21 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
 import Header from '../Header/Header.jsx';
-// import { setQuizTitle } from '../../actions/quizActions';
+import {
+  setQuizTitle,
+  setQuizDescription,
+  setQuizLevel,
+  setQuizClass,
+  addQuestion,
+  updateQuestion,
+  removeQuestion,
+  saveQuiz,
+  addOption,
+  updateOptionText,
+  updateQuestionPrompt,
+  removeQuestionOption,
+  toggleQuestionOptionAsAnswer,
+} from '../../actions/quizActions';
 
 // testing status
 
@@ -184,9 +199,61 @@ class TeacherCreateQuizView extends Component {
 
 TeacherCreateQuizView.propTypes = {
   classes: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  quizClass: PropTypes.string.isRequired,
+  level: PropTypes.string.isRequired,
+  questions: PropTypes.arrayOf(
+    PropTypes.shape({
+      prompt: PropTypes.string.isRequired,
+      options: PropTypes.arrayOf(
+        PropTypes.shape({
+          text: PropTypes.string.isRequired,
+          isAnswer: PropTypes.bool.isRequired,
+        })
+      ),
+    })
+  ),
+  setQuizTitle: PropTypes.func.isRequired,
+  setQuizDescription: PropTypes.func.isRequired,
+  setQuizLevel: PropTypes.func.isRequired,
+  setQuizClass: PropTypes.func.isRequired,
+  addQuestion: PropTypes.func.isRequired,
+  updateQuestion: PropTypes.func.isRequired,
+  removeQuestion: PropTypes.func.isRequired,
+  saveQuiz: PropTypes.func.isRequired,
+  addOption: PropTypes.func.isRequired,
+  updateOptionText: PropTypes.func.isRequired,
+  updateQuestionPrompt: PropTypes.func.isRequired,
+  removeQuestionOption: PropTypes.func.isRequired,
+  toggleQuestionOptionAsAnswer: PropTypes.func.isRequired,
 };
 
 const StyledComponent = withStyles(styles)(TeacherCreateQuizView);
-export default StyledComponent;
-// const mapStateToProps = state => {};
-// export default connect(
+
+const mapStateToProps = ({ quiz }) => ({
+  title: quiz.title,
+  description: quiz.description,
+  quizClass: quiz.quizClass,
+  level: quiz.level,
+  questions: quiz.questions,
+});
+
+export default connect(
+  mapStateToProps,
+  {
+    setQuizTitle,
+    setQuizDescription,
+    setQuizLevel,
+    setQuizClass,
+    addQuestion,
+    updateQuestion,
+    removeQuestion,
+    saveQuiz,
+    addOption,
+    updateOptionText,
+    updateQuestionPrompt,
+    removeQuestionOption,
+    toggleQuestionOptionAsAnswer,
+  }
+)(StyledComponent);
