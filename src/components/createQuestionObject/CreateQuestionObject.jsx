@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+// Lets use this! ---> import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 
 const styles = theme => ({
@@ -19,208 +19,90 @@ const styles = theme => ({
     width: 200,
   },
 });
-const style_css = {  
-  "display":"block",
-  "width":"20%",
-  "padding":"0.375rem 0.75rem",
-  "fontSize":"1rem",
-  "lineHeight":"1.5",
-  "color":"#495057",
-  "backgroundColor":"#fff",
-  "backgroundClip":"padding-box",
-  "border":"1px solid #ced4da",
-  "borderRadius":"0.25rem",
-  "transition":"border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+const style_css = {
+  display: 'block',
+  width: '20%',
+  padding: '0.375rem 0.75rem',
+  fontSize: '1rem',
+  lineHeight: '1.5',
+  color: '#495057',
+  backgroundColor: '#fff',
+  backgroundClip: 'padding-box',
+  border: '1px solid #ced4da',
+  borderRadius: '0.25rem',
+  transition: 'border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out',
 };
 
 class CreateQuestionObject extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: this.props.index - 1,
-      questionType: 'single',
-      question: '',
-      answerOne: '',
-      answerTwo: '',
-      optionOne: '',
-      optionTwo: '',
-      optionThree: '',
-    };
-  }
-  QuestionChange() {
-    this.props.handleQuestion(this.state);
-  }
-  onChangeType = e => {
-    this.setState(
-      {
-        questionType: e.target.value,
-        answerOne: '',
-        answerTwo: '',
-        optionOne: '',
-        optionTwo: '',
-        optionThree: '',
-      },
-      this.QuestionChange
-    );
-  };
-  onChangequestion = e => {
-    this.setState({ question: e.target.value }, this.QuestionChange);
-  };
-  onChangeAnswerOne = e => {
-    this.setState({ answerOne: e.target.value }, this.QuestionChange);
-  };
-  onChangeAnswerTwo = e => {
-    this.setState({ answerTwo: e.target.value }, this.QuestionChange);
-  };
-  onChangeOptionOne = e => {
-    this.setState({ optionOne: e.target.value }, this.QuestionChange);
-  };
-  onChangeOptionTwo = e => {
-    this.setState({ optionTwo: e.target.value }, this.QuestionChange);
-  };
-  onChangeOptionThree = e => {
-    this.setState({ optionThree: e.target.value }, this.QuestionChange);
-  };
-  getAnswerPrompt() {
-    const { classes } = this.props;
-    switch (this.state.questionType) {
-    case 'fill':
-      return (
-        <div>
-          <TextField
-            id='outlined-name'
-            label='Answer'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='answer-1'
-            value={this.state.answerOne}
-            onChange={this.onChangeAnswerOne}
-          />
-          <br />
-        </div>
-      );
-    case 'single':
-      return (
-        <div>
-          <TextField
-            id='outlined-name'
-            label='Answer'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='answer-1'
-            value={this.state.answerOne}
-          />
-          <br />
-          <TextField
-            id='outlined-name'
-            label='Option 1'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='option-1'
-            value={this.state.optionOne}
-          />
-          <br />
-          <TextField
-            id='outlined-name'
-            label='Option 2'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='option-2'
-            value={this.state.optionTwo}
-          />
-          <br />
-          <TextField
-            id='outlined-name'
-            label='Option 3'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='option-3'
-            value={this.state.optionThree}
-          />
-          <br />
-        </div>
-      );
-    case 'multiple':
-      return (
-        <div>
-          <TextField
-            id='outlined-name'
-            label='Answer 1'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='answer-1'
-            value={this.state.answerOne}
-            onChange={this.onChangeAnswerOne}
-          />
-          <br />
-          <TextField
-            id='outlined-name'
-            label='Answer 2'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='answer-2'
-            value={this.state.answerTwo}
-            onChange={this.onChangeAnswerTwo}
-          />
-          <br />
-          <TextField
-            id='outlined-name'
-            label='Option 1'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='option-1'
-            value={this.state.optionOne}
-            onChange={this.onChangeOptionOne}
-          />
-          <br />
-          <TextField
-            id='outlined-name'
-            label='Option 2'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            name='option-2'
-            value={this.state.optionTwo}
-            onChange={this.onChangeOptionTwo}
-          />
-          <br />
-        </div>
-      );
-    default:
-      return null;
-    }
-  }
   render() {
+    console.log(this.props);
+    const questionIndex = this.props.questionIndex;
     return (
       <div>
-        <h4>{this.props.index}.</h4>
-        <form id={this.props.index}>
-          Question: <input type='text' style={style_css} name='Question' onChange={this.onChangequestion} />
-          <br />
-          Question Type:{' '}
-          <select name='questionType' value={this.state.questionType} onChange={this.onChangeType}>
-            <option value='single'>Single Choice Answer</option>
-            <option value='multiple'>Multiple Choice Answer</option>
-            <option value='fill'>Fill in Answer</option>
-          </select>
-          <br />
-          {this.getAnswerPrompt()}
-        </form>
+        <h4>{this.props.questionIndex + 1}.</h4>
+        Question:{' '}
+        <input
+          type='button'
+          className='button'
+          value='delete Question'
+          onClick={() => this.props.removeQuestion(questionIndex)}
+        />
+        <input
+          type='text'
+          style={style_css}
+          name='Question'
+          value={this.props.prompt}
+          onChange={event => this.props.updateQuestionPrompt(event.target.value, questionIndex)}
+        />
         <br />
+        {this.props.options.map((option, optionIndex) => {
+          // we need to add the checkbox here too
+          return (
+            <React.Fragment>
+              <input
+                type='text'
+                style={style_css}
+                value={option.text}
+                onChange={event =>
+                  this.props.updateOptionText(event.target.value, optionIndex, questionIndex)
+                }
+              />
+              <input
+                type='button'
+                className='button'
+                value='Delete Option'
+                onClick={() => this.props.removeQuestionOption(optionIndex, questionIndex)}
+              />
+            </React.Fragment>
+          );
+        })}
+        <br />
+        <input
+          type='button'
+          className='button'
+          value='Add Option'
+          onClick={() => this.props.addOption(questionIndex)}
+        />
       </div>
     );
   }
 }
 CreateQuestionObject.propTypes = {
   classes: PropTypes.object.isRequired,
+  questionIndex: PropTypes.number.isRequired,
+  prompt: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      isAnswer: PropTypes.bool.isRequired,
+    })
+  ),
+  removeQuestion: PropTypes.func.isRequired,
+  addOption: PropTypes.func.isRequired,
+  updateOptionText: PropTypes.func.isRequired,
+  updateQuestionPrompt: PropTypes.func.isRequired,
+  removeQuestionOption: PropTypes.func.isRequired,
+  toggleQuestionOptionAsAnswer: PropTypes.func.isRequired,
 };
 
 export default withStyles(styles)(CreateQuestionObject);

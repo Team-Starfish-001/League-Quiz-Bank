@@ -59,37 +59,42 @@ export function saveQuiz(quiz) {
   };
 }
 
-export function updateQuestionPrompt(prompt) {
+export function updateQuestionPrompt(prompt, questionIndex) {
   return {
     type: action.UPDATE_PROMPT,
     prompt,
+    questionIndex,
   };
 }
 
-export function updateOptionText(optionText, optionIndex) {
+export function updateOptionText(optionText, optionIndex, questionIndex) {
   return {
     type: action.UPDATE_OPTION_TEXT,
     optionText,
     optionIndex,
+    questionIndex,
   };
 }
 
-export function addOption() {
+export function addOption(questionIndex) {
   return {
     type: action.ADD_OPTION,
+    questionIndex,
   };
 }
 
-export function removeQuestionOption(optionIndex) {
+export function removeQuestionOption(optionIndex, questionIndex) {
   return {
     type: action.REMOVE_OPTION,
     optionIndex,
+    questionIndex,
   };
 }
 
-export function toggleQuestionOptionAsAnswer(optionIndex) {
+export function toggleQuestionOptionAsAnswer(optionIndex, questionIndex) {
   return {
     type: action.TOGGLE_OPTION_AS_ANSWER,
     optionIndex,
+    questionIndex,
   };
 }

@@ -9,7 +9,7 @@ const initialQuestionState = {
 };
 
 const initialState = {
-  title: 'Heyo!',
+  title: '',
   description: '',
   quizClass: '',
   level: '',
@@ -39,7 +39,7 @@ function quiz(state = initialState, action) {
       ...state,
       questions: [
         ...state.questions.slice(0, action.questionIndex),
-        questionReducer(state.questions.action.questionIndex, action),
+        questionReducer(state.questions[action.questionIndex], action),
         ...state.questions.slice(action.questionIndex + 1, state.questions.length),
       ],
     };
