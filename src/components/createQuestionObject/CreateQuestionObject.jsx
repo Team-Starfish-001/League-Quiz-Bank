@@ -35,7 +35,6 @@ const style_css = {
 
 class CreateQuestionObject extends Component {
   render() {
-    console.log(this.props);
     const questionIndex = this.props.questionIndex;
     return (
       <div>
