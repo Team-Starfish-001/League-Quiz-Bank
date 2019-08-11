@@ -48,7 +48,7 @@ class CreateQuestionObject extends Component {
               <br/>
               <TextField
                 id='outlined-name'
-                label={"Option: " + optionIndex}
+                label={"Option: " + (optionIndex+1)}
                 margin='normal'
                 variant='outlined'
                 value={option.text}
