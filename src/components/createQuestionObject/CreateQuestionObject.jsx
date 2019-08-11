@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import DelIcon from '@material-ui/icons/Delete';
 // Lets use this! ---> import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 
@@ -40,12 +43,9 @@ class CreateQuestionObject extends Component {
       <div>
         <h4>{this.props.questionIndex + 1}.</h4>
         Question:{' '}
-        <input
-          type='button'
-          className='button'
-          value='delete Question'
-          onClick={() => this.props.removeQuestion(questionIndex)}
-        />
+        <Fab color='primary' aria-label='Del' size='small' onClick={() => this.props.removeQuestion(questionIndex)}>
+          <DelIcon />
+        </Fab>
         <input
           type='text'
           style={style_css}
@@ -66,22 +66,15 @@ class CreateQuestionObject extends Component {
                   this.props.updateOptionText(event.target.value, optionIndex, questionIndex)
                 }
               />
-              <input
-                type='button'
-                className='button'
-                value='Delete Option'
-                onClick={() => this.props.removeQuestionOption(optionIndex, questionIndex)}
-              />
+              <Fab color='primary' aria-label='Del' size='small' onClick={() => this.props.removeQuestionOption(optionIndex, questionIndex)}>
+                <DelIcon />
+              </Fab>
             </React.Fragment>
           );
         })}
-        <br />
-        <input
-          type='button'
-          className='button'
-          value='Add Option'
-          onClick={() => this.props.addOption(questionIndex)}
-        />
+        <Fab color='primary' aria-label='Add' size='small' onClick={() => this.props.addOption(questionIndex)}>
+          <AddIcon />
+        </Fab>
       </div>
     );
   }

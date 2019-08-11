@@ -106,7 +106,7 @@ class TeacherCreateQuizView extends Component {
             ))}
           </CardContent>
         </Card>
-        <Fab color='primary' aria-label='Add' onClick={this.props.addQuestion}>
+        <Fab color='primary' aria-label='Add' size='small' onClick={this.props.addQuestion}>
           <AddIcon />
         </Fab>
         <input type='button' className='button' value='Save Quiz' onClick={this.props.saveQuiz} />
