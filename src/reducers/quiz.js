@@ -44,7 +44,7 @@ function quiz(state = initialState, action) {
       ],
     };
   case actionTypes.REMOVE_QUESTION:
-    return { ...state, questions: [...state.questions.splice(action.questionIndex, 1)] };
+    return { ...state, questions: [...state.questions.slice(0, action.questionIndex).concat(...state.questions.slice(action.questionIndex+ 1))] };
   case actionTypes.SAVE_QUIZ:
     console.log(state);
     return state;
@@ -71,7 +71,7 @@ const questionReducer = (questionState = initialQuestionState, action) => {
   case actionTypes.REMOVE_OPTION: {
     return {
       ...questionState,
-      options: [...questionState.options.splice(action.optionIndex, 1)],
+      options: [...questionState.options.slice(0, action.optionIndex).concat(...questionState.options.slice(action.optionIndex+ 1))],
     };
   }
   case actionTypes.TOGGLE_OPTION_AS_ANSWER: {
