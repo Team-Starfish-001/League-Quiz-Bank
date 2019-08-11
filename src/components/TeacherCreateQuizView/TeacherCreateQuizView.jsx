@@ -69,23 +69,14 @@ class TeacherCreateQuizView extends Component {
             label='Description'
             className={classes.textField}
             margin='normal'
-            variant='outlined'
+            variant='standard'
           />
           <TextField
             id='outlined-name'
             label='Class'
             className={classes.textField}
             margin='normal'
-            variant='outlined'
-          />
-          <br />
-          <TextField
-            name='question_amt'
-            label='Amount of Questions'
-            className={classes.textField}
-            margin='normal'
-            variant='outlined'
-            onChange={this.onChange}
+            variant='standard'
           />
         </form>
         <br />
