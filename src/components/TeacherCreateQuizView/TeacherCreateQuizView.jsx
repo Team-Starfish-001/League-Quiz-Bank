@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import SaveIcon from '@material-ui/icons/Save';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
@@ -109,7 +110,9 @@ class TeacherCreateQuizView extends Component {
         <Fab color='primary' aria-label='Add' size='small' onClick={this.props.addQuestion}>
           <AddIcon />
         </Fab>
-        <input type='button' className='button' value='Save Quiz' onClick={this.props.saveQuiz} />
+        <Fab color='primary' aria-label='Del' size='small' onClick={this.props.saveQuiz}>
+          <SaveIcon />
+        </Fab>
       </div>
     );
   }
