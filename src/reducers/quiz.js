@@ -1,4 +1,6 @@
 import * as actionTypes from '../actions/actionConstants';
+const axios = require('axios');
+
 // import { updateObject, updateItemInArray } from './utils';
 
 const initialOption = { text: '', isAnswer: false };
@@ -46,7 +48,15 @@ function quiz(state = initialState, action) {
   case actionTypes.REMOVE_QUESTION:
     return { ...state, questions: [...state.questions.slice(0, action.questionIndex).concat(...state.questions.slice(action.questionIndex+ 1))] };
   case actionTypes.SAVE_QUIZ:
-    console.log(state);
+    axios.post('http://localhost:8080/getQuiz', {
+      state,
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     return state;
   default:
     return state;
