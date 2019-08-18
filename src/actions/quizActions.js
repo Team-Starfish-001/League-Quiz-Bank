@@ -19,37 +19,36 @@ export function setQuizTitle(title) {
   return { type: action.SET_TITLE, title };
 }
 
-export function setQuizDesc(desc) {
-  return { type: action.SET_DESC, desc };
+export function setQuizDescription(description) {
+  return { type: action.SET_DESCRIPTION, description };
 }
 
-export function setQuizLevel(lvl) {
-  return { type: action.SET_LEVEL, lvl };
+export function setQuizLevel(level) {
+  return { type: action.SET_LEVEL, level };
 }
 
-export function setQuizClass(class_) {
-  return { type: action.SET_QUIZ_CLASS, class_ };
+export function setQuizClass(quizClass) {
+  return { type: action.SET_QUIZ_CLASS, quizClass };
 }
 
-export function addQuestion(newQuestion) {
+export function addQuestion() {
   return {
     type: action.ADD_QUESTION,
-    newQuestion,
   };
 }
 
-export function updateQuestion(updatedQuestion, index) {
+export function updateQuestion(updatedQuestion, questionIndex) {
   return {
     type: action.UPDATE_QUESTION,
     updatedQuestion,
-    index,
+    questionIndex,
   };
 }
 
-export function rmQuestion(index) {
+export function removeQuestion(questionIndex) {
   return {
     type: action.REMOVE_QUESTION,
-    index,
+    questionIndex,
   };
 }
 
@@ -57,5 +56,45 @@ export function saveQuiz(quiz) {
   return {
     type: action.SAVE_QUIZ,
     quiz,
+  };
+}
+
+export function updateQuestionPrompt(prompt, questionIndex) {
+  return {
+    type: action.UPDATE_PROMPT,
+    prompt,
+    questionIndex,
+  };
+}
+
+export function updateOptionText(optionText, optionIndex, questionIndex) {
+  return {
+    type: action.UPDATE_OPTION_TEXT,
+    optionText,
+    optionIndex,
+    questionIndex,
+  };
+}
+
+export function addOption(questionIndex) {
+  return {
+    type: action.ADD_OPTION,
+    questionIndex,
+  };
+}
+
+export function removeQuestionOption(optionIndex, questionIndex) {
+  return {
+    type: action.REMOVE_OPTION,
+    optionIndex,
+    questionIndex,
+  };
+}
+
+export function toggleQuestionOptionAsAnswer(optionIndex, questionIndex) {
+  return {
+    type: action.TOGGLE_OPTION_AS_ANSWER,
+    optionIndex,
+    questionIndex,
   };
 }
