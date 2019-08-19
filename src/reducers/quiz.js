@@ -1,5 +1,4 @@
 import * as actionTypes from '../actions/actionConstants';
-const axios = require('axios');
 
 // import { updateObject, updateItemInArray } from './utils';
 
@@ -28,8 +27,6 @@ function quiz(state = initialState, action) {
     return { ...state, level: action.level };
   case actionTypes.SET_QUIZ_CLASS:
     return { ...state, quizClass: action.quizClass };
-  case actionTypes.DISPLAY_QUIZ:
-    return { ...state, questions: action.questions };
   case actionTypes.ADD_QUESTION:
     return { ...state, questions: [...state.questions, initialQuestionState] };
   case actionTypes.UPDATE_PROMPT:
@@ -46,17 +43,15 @@ function quiz(state = initialState, action) {
       ],
     };
   case actionTypes.REMOVE_QUESTION:
-    return { ...state, questions: [...state.questions.slice(0, action.questionIndex).concat(...state.questions.slice(action.questionIndex+ 1))] };
+    return {
+      ...state,
+      questions: [
+        ...state.questions
+          .slice(0, action.questionIndex)
+          .concat(...state.questions.slice(action.questionIndex + 1)),
+      ],
+    };
   case actionTypes.SAVE_QUIZ:
-    axios.post('http://localhost:8080/getQuiz', {
-      state,
-    })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
     return state;
   default:
     return state;
@@ -81,7 +76,11 @@ const questionReducer = (questionState = initialQuestionState, action) => {
   case actionTypes.REMOVE_OPTION: {
     return {
       ...questionState,
-      options: [...questionState.options.slice(0, action.optionIndex).concat(...questionState.options.slice(action.optionIndex+ 1))],
+      options: [
+        ...questionState.options
+          .slice(0, action.optionIndex)
+          .concat(...questionState.options.slice(action.optionIndex + 1)),
+      ],
     };
   }
   case actionTypes.TOGGLE_OPTION_AS_ANSWER: {
@@ -90,8 +89,8 @@ const questionReducer = (questionState = initialQuestionState, action) => {
       options: [
         ...questionState.options.slice(0, action.optionIndex),
         {
-          ...questionState[action.optionIndex],
-          isAnswer: !questionState[action.optionIndex].isAnswer,
+          ...questionState.options[action.optionIndex],
+          isAnswer: !questionState.options[action.optionIndex].isAnswer,
         },
         ...questionState.options.slice(action.optionIndex + 1, questionState.options.length),
       ],
