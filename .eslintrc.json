@@ -6,6 +6,7 @@
     "curly": "warn",
     "jsx-a11y/alt-text": "disable",
     "jsx-quotes": ["error", "prefer-single"],
+    "quotes": ["error", "single"],
     "indent": ["error", 2],
     "comma-dangle": ["error", "always-multiline"],
     "spaced-comment": ["error", "always"],

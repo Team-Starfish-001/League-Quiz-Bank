@@ -4,6 +4,8 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import DelIcon from '@material-ui/icons/Delete';
 import TextField from '@material-ui/core/TextField';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import PropTypes from 'prop-types';
 
 const styles = theme => ({
@@ -29,7 +31,6 @@ class CreateQuestionObject extends Component {
     return (
       <div>
         <h4>{this.props.questionIndex + 1}.</h4>
-        
         <TextField
           id='outlined-name'
           label='Question'
@@ -38,33 +39,62 @@ class CreateQuestionObject extends Component {
           value={this.props.prompt}
           onChange={event => this.props.updateQuestionPrompt(event.target.value, questionIndex)}
         />
-        <Fab color='primary' aria-label='Del' size='small' onClick={() => this.props.removeQuestion(questionIndex)}>
+        <Fab
+          color='primary'
+          aria-label='Del'
+          size='small'
+          onClick={() => this.props.removeQuestion(questionIndex)}
+        >
           <DelIcon />
         </Fab>
         {this.props.options.map((option, optionIndex) => {
           // we need to add the checkbox here too
           return (
             <React.Fragment>
-              <br/>
+              <br />
               <TextField
                 id='outlined-name'
-                label={"Option: " + (optionIndex+1)}
+                label={'Option: ' + (optionIndex + 1)}
                 margin='normal'
                 variant='outlined'
                 value={option.text}
                 onChange={event =>
                   this.props.updateOptionText(event.target.value, optionIndex, questionIndex)
                 }
+              />{' '}
+              <FormControlLabel
+                label='Is Answer'
+                control={
+                  <Checkbox
+                    checked={option.isAnswer}
+                    onClick={() =>
+                      this.props.toggleQuestionOptionAsAnswer(optionIndex, questionIndex)
+                    }
+                    color='primary'
+                    value={option.isAnswer}
+                    inputProps={{
+                      'aria-label': 'primary checkbox',
+                    }}
+                  />
+                }
               />
-              <Fab color='primary' aria-label='Del' size='small' onClick={() => this.props.removeQuestionOption(optionIndex, questionIndex)}>
+              <Fab
+                color='primary'
+                aria-label='Del'
+                size='small'
+                onClick={() => this.props.removeQuestionOption(optionIndex, questionIndex)}
+              >
                 <DelIcon />
               </Fab>
-              
             </React.Fragment>
-            
           );
-        })}
-        <Fab color='primary' aria-label='Add' size='small' onClick={() => this.props.addOption(questionIndex)}>
+        })}{' '}
+        <Fab
+          color='primary'
+          aria-label='Add'
+          size='small'
+          onClick={() => this.props.addOption(questionIndex)}
+        >
           <AddIcon />
         </Fab>
       </div>

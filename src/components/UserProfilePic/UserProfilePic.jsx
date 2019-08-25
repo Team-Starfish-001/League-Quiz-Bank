@@ -1,6 +1,6 @@
 import React from 'react';
-import "./UserProfilePic.css";
-import altProfilePic from "./altprofilepic.png";
+import './UserProfilePic.css';
+import altProfilePic from './altprofilepic.png';
 class UserProfilePic extends React.Component {
   checkForProfilePic(imgSrc) {
     if(imgSrc == null) {

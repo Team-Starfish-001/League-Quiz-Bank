@@ -1,19 +1,5 @@
 import * as action from './actionConstants';
 
-// export function addQuiz(name) {
-//   return {
-//     type: action.ADD_QUIZ,
-//     name,
-//   };
-// }
-
-export function displayQuiz(questionArray) {
-  return {
-    type: action.SAVE_QUIZ,
-    questionArray,
-  };
-}
-
 // I think maybe change this to add a single question, then also create editQuestion actions
 export function setQuizTitle(title) {
   return { type: action.SET_TITLE, title };
