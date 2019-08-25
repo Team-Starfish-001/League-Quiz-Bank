@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import SaveIcon from '@material-ui/icons/Save';
+import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CreateQuestionObject from '../createQuestionObject/CreateQuestionObject';
@@ -98,12 +96,12 @@ class TeacherCreateQuizView extends Component {
             ))}
           </CardContent>
         </Card>
-        <Fab color='primary' aria-label='Add' size='small' onClick={this.props.addQuestion}>
-          <AddIcon />
-        </Fab>
-        <Fab color='primary' aria-label='Del' size='small' onClick={this.props.saveQuiz}>
-          <SaveIcon />
-        </Fab>
+        <Button color='primary' aria-label='Add' size='small' onClick={this.props.addQuestion}>
+          Add Question
+        </Button>
+        <Button color='primary' aria-label='Del' size='small' onClick={this.props.saveQuiz}>
+          Save
+        </Button>
       </div>
     );
   }

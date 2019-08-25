@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import DelIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
+import { relative } from 'path';
 
 const styles = theme => ({
   container: {
@@ -23,7 +23,18 @@ const styles = theme => ({
   menu: {
     width: 200,
   },
+
 });
+const buttonStyle = {
+  position:relative,
+  height: -200,
+  top : 25,
+  left : 20,
+};
+const labelStyle = {
+  position: 'relative',
+  transform: 'translateY(50%)',
+};
 
 class CreateQuestionObject extends Component {
   render() {
@@ -39,14 +50,15 @@ class CreateQuestionObject extends Component {
           value={this.props.prompt}
           onChange={event => this.props.updateQuestionPrompt(event.target.value, questionIndex)}
         />
-        <Fab
+        <Button
           color='primary'
           aria-label='Del'
           size='small'
+          style = {buttonStyle}
           onClick={() => this.props.removeQuestion(questionIndex)}
         >
-          <DelIcon />
-        </Fab>
+          Delete Question
+        </Button>
         {this.props.options.map((option, optionIndex) => {
           // we need to add the checkbox here too
           return (
@@ -57,13 +69,16 @@ class CreateQuestionObject extends Component {
                 label={'Option: ' + (optionIndex + 1)}
                 margin='normal'
                 variant='outlined'
+
                 value={option.text}
                 onChange={event =>
                   this.props.updateOptionText(event.target.value, optionIndex, questionIndex)
                 }
               />{' '}
               <FormControlLabel
-                label='Is Answer'
+                labelPlacement = 'start'
+                color='primary'
+                style = {labelStyle}
                 control={
                   <Checkbox
                     checked={option.isAnswer}
@@ -76,27 +91,31 @@ class CreateQuestionObject extends Component {
                       'aria-label': 'primary checkbox',
                     }}
                   />
+                  
                 }
+                label={<Typography style={{color:'#3f51b5'}}>IS ANSWER:</Typography>}
               />
-              <Fab
+              <Button
                 color='primary'
                 aria-label='Del'
                 size='small'
+                style = {buttonStyle}
                 onClick={() => this.props.removeQuestionOption(optionIndex, questionIndex)}
               >
-                <DelIcon />
-              </Fab>
+                Delete Option
+              </Button>
             </React.Fragment>
           );
         })}{' '}
-        <Fab
+        <Button
           color='primary'
           aria-label='Add'
           size='small'
+          style = {buttonStyle}
           onClick={() => this.props.addOption(questionIndex)}
         >
-          <AddIcon />
-        </Fab>
+          Add Option
+        </Button>
       </div>
     );
   }
