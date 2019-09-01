@@ -11,7 +11,7 @@ class UserProfilePic extends React.Component {
   render() {
     return(
       <div id='profilepic'>
-        <a href='https://www.youtube.com/watch?v=wJHDVqFC-dg'><img style={{width:'50%', height:'50%'}} alt='Profile Pic' src={this.checkForProfilePic(this.props.src)}></img></a>
+        <a href='https://www.youtube.com/watch?v=wJHDVqFC-dg'><img style={{width:'7%', height:'7%'}} alt='Profile Pic' src={this.checkForProfilePic(this.props.src)}></img></a>
       </div>
     );
   }
