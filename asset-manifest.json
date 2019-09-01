@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/League-Quiz-Bank/static/css/main.eb94d447.chunk.css",
+    "main.js": "/League-Quiz-Bank/static/js/main.81fcef44.chunk.js",
+    "main.js.map": "/League-Quiz-Bank/static/js/main.81fcef44.chunk.js.map",
+    "runtime~main.js": "/League-Quiz-Bank/static/js/runtime~main.b1b7d8d2.js",
+    "runtime~main.js.map": "/League-Quiz-Bank/static/js/runtime~main.b1b7d8d2.js.map",
+    "static/js/2.78446346.chunk.js": "/League-Quiz-Bank/static/js/2.78446346.chunk.js",
+    "static/js/2.78446346.chunk.js.map": "/League-Quiz-Bank/static/js/2.78446346.chunk.js.map",
+    "index.html": "/League-Quiz-Bank/index.html",
+    "precache-manifest.7c74a669bf123e6d7884ac854428e180.js": "/League-Quiz-Bank/precache-manifest.7c74a669bf123e6d7884ac854428e180.js",
+    "service-worker.js": "/League-Quiz-Bank/service-worker.js",
+    "static/css/main.eb94d447.chunk.css.map": "/League-Quiz-Bank/static/css/main.eb94d447.chunk.css.map"
+  }
+}
