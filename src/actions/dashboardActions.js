@@ -1,6 +1,6 @@
 import * as action from './actionConstants';
-const axios = require('axios');
 
+const axios = require('axios');
 const requestQuizList = () => ({ type: action.REQUEST_QUIZLIST });
 
 export const fetchQuizList = () => dispatch => {

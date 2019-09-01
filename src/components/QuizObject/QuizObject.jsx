@@ -1,9 +1,8 @@
 import React from 'react';
 import QuestionObject from '../QuestionObject/QuestionObject';
+
 class QuizObject extends React.Component {
-  submitForms(){
-      
-  }
+  submitForms(){}
   render(){
     return(
       <div>
@@ -13,4 +12,5 @@ class QuizObject extends React.Component {
     );
   }
 }
+
 export default QuizObject;

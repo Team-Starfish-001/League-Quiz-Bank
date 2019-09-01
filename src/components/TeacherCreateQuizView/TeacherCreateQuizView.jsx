@@ -24,8 +24,6 @@ import {
   toggleQuestionOptionAsAnswer,
 } from '../../actions/quizActions';
 
-// testing status
-
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -42,6 +40,7 @@ const styles = theme => ({
     width: 200,
   },
 });
+
 class TeacherCreateQuizView extends Component {
   render() {
     const { classes } = this.props;
