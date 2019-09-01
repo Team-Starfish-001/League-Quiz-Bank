@@ -1,6 +1,7 @@
 #profilepic {
   display: inline-block;
 }
+
 #profilepic > img {
   border-radius: 6px;
   width: 65px;
